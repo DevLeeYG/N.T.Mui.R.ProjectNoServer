@@ -15,20 +15,10 @@ a {
   box-sizing: border-box;
 }
 
-.main {
-  font-family: sans-serif;
-  font-weight: 400;
-  font-size: 100px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 93vh;
-  width: 100%;
+.homeMain {
+  background-color: black;
+  height: 100vh;
 }
-.about-main {
-}
-
 @media screen and (max-width: 1000px) {
   .main {
     font-size: 70px;
