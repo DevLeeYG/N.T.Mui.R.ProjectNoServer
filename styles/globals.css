@@ -3,7 +3,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
-  background-size: cover;
 }
 
 a {
@@ -13,14 +12,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.homeMain {
-  background-color: black;
-  height: 100vh;
-}
-@media screen and (max-width: 1000px) {
-  .main {
-    font-size: 70px;
-  }
 }

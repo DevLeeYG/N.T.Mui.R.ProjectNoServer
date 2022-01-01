@@ -1,3 +1,21 @@
+import React, { useState } from 'react';
+import {
+  CardMedia,
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  IconButton,
+  Button,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material';
+import styled from 'styled-components';
+import MenuIcon from '@mui/icons-material/Menu';
+
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { makeStyles } from '@material-ui/core';
+
 export const dummy = [
   {
     id: 0,
@@ -27,18 +45,28 @@ export const dummy = [
 
 export const style = {
   display: 'flex',
+  width: '100%',
+  zIndex: 9999,
   backgroundColor: 'transparent',
   boxShadow: 0,
-  height: '100%',
+  justifyContent: 'space-between',
   paddingLeft: '12px',
   paddingRight: '10px',
 };
 
-export const style1 = {
-  height: '110px',
-  width: '100%',
-  paddingTop: '45px',
-  flexGrow: 1,
-  display: 'flex',
-  alignItems: 'center',
-};
+export const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.up('xs')]: {
+      backgroundColor: 'black',
+    },
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: 'green',
+    },
+    [theme.breakpoints.up('lg')]: {
+      backgroundColor: 'orange',
+    },
+    [theme.breakpoints.up('xl')]: {
+      backgroundColor: 'cyan',
+    },
+  },
+}));

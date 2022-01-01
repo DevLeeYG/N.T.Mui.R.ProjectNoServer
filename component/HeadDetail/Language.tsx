@@ -10,9 +10,6 @@ import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  float: right;
-  padding-right: 20px;
-
   text-align: center;
 `;
 
