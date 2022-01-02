@@ -43,6 +43,33 @@ export const dummy = [
   },
 ];
 
+export const sidebarlist = [
+  {
+    id: 0,
+    text: 'EDAM',
+  },
+  {
+    id: 1,
+    text: 'NOTICE',
+  },
+  {
+    id: 2,
+    text: 'ARTISTS',
+  },
+  {
+    id: 3,
+    text: 'madeEDAM',
+  },
+  {
+    id: 4,
+    text: 'AUDITION',
+  },
+  {
+    id: 5,
+    text: 'CONTACT US',
+  },
+];
+
 export const style = {
   display: 'flex',
   width: '100%',

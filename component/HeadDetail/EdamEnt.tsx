@@ -9,7 +9,7 @@ const EdamEnt = () => {
       sx={{
         position: 'absolute',
         top: '37%',
-
+        zIndex: 0,
         p: '0px 15px 0px 15px',
         width: '100%',
         overflow: 'hidden',

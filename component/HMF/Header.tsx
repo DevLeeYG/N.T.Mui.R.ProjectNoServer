@@ -25,6 +25,7 @@ import Link from 'next/link';
 import Language from '../HeadDetail/Language';
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import Popper from '@mui/material/Popper';
+import Sidebar from '../HeadDetail/Sidebar';
 
 const HeadSapn = styled.span`
   margin-left: 10px;
@@ -83,7 +84,7 @@ const Header = () => {
                 </Button>
                 <Popper {...bindPopper(popupState)} transition>
                   {({ TransitionProps }) => (
-                    <Fade {...TransitionProps} timeout={350}>
+                    <Fade {...TransitionProps}>
                       <Paper
                         sx={{
                           marginRight: 1.5,
@@ -99,23 +100,8 @@ const Header = () => {
               </div>
             )}
           </PopupState>
-          {/* <Typography sx={{ display: 'flex', lineHeight: '32px' }}>
-            <Box>KOR</Box>
-            <ArrowDropDownIcon
-              sx={{
-                fontSize: '35px',
-                paddingBottom: '5px',
-              }}
-            />
-          </Typography>
-          <Language /> */}
-          <MenuIcon
-            sx={{
-              width: '45px',
-              height: '45px',
-              paddingBottom: 0.5,
-            }}
-          />
+
+          <Sidebar />
         </Toolbar>
       </AppBar>
     </Box>
