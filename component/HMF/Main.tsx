@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import {
   CardMedia,
   AppBar,
@@ -14,9 +14,6 @@ import Container from '@mui/material/Container';
 import { useStyles } from './HeadSource';
 
 const Main = () => {
-  const xs = useMediaQuery('(max-width:375px)');
-  const sm = useMediaQuery('(max-width:768px)');
-
   const classes = useStyles();
 
   return (
@@ -26,32 +23,14 @@ const Main = () => {
         width: '100%',
         height: '100vh',
 
-        backgroundColor: 'black',
+        backgroundColor: '#121212',
       }}
     >
-      {xs ? (
-        <>
-          <CardMedia
-            sx={{
-              display: 'flex',
-              width: '375px',
-              height: '812px',
-            }}
-            component="img"
-            src="/img/home1.jpg"
-          />
-        </>
-      ) : (
-        <>
-          <CardMedia
-            sx={{
-              display: 'flex',
-            }}
-            component="img"
-            src="/img/home1.jpg"
-          />
-        </>
-      )}
+      <CardMedia
+        className={classes.root}
+        component="img"
+        src="/img/home1.jpg"
+      />
     </Box>
   );
 };

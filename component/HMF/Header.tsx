@@ -5,28 +5,15 @@ import {
   Box,
   Toolbar,
   Typography,
-  IconButton,
-  Button,
-  useTheme,
-  Menu,
-  MenuItem,
-  Fade,
   Paper,
-  useMediaQuery,
 } from '@mui/material';
 import styled from 'styled-components';
-import MenuIcon from '@mui/icons-material/Menu';
 import { dummy } from './HeadSource';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { makeStyles } from '@material-ui/core';
-import { style } from './HeadSource';
 import { useStyles } from './HeadSource';
 import Link from 'next/link';
-import Language from '../HeadDetail/Language';
-import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
-import Popper from '@mui/material/Popper';
 import Sidebar from '../HeadDetail/Sidebar';
-
+import { HeaderStyle, Headerimg } from './HeadSource';
 const HeadSapn = styled.span`
   margin-left: 10px;
   margin-right: 10px;
@@ -34,7 +21,9 @@ const HeadSapn = styled.span`
 
 const Header = () => {
   const [mouseHover, setMouseHover] = useState<Boolean>(false);
-  const classes = useStyles();
+  const classes = HeaderStyle();
+  const classesI = Headerimg();
+
   const menu = dummy.map((el) => {
     return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
   });
@@ -45,17 +34,10 @@ const Header = () => {
         flexGrow: 1,
         position: 'fixed',
         color: 'white',
+        zIndex: 5,
       }}
     >
-      <AppBar
-        sx={{
-          backgroundColor: 'transparent',
-          p: 0.5,
-          boxShadow: 0,
-          width: '100%',
-          minHeight: '64px',
-        }}
-      >
+      <AppBar sx={{ boxShadow: 0 }} className={classes.root}>
         <Toolbar
           sx={{
             width: '100%',
@@ -69,8 +51,8 @@ const Header = () => {
             <Link passHref href="/">
               <a>
                 <CardMedia
+                  className={classesI.root}
                   component="img"
-                  sx={{ width: 80 }}
                   image="/img/sub-logo.png"
                   alt="stage"
                 />

@@ -1,19 +1,11 @@
 import { Box, CardMedia, Typography } from '@mui/material';
 import React from 'react';
 import AppLayout from '../AppLayout';
-
+import { Foot } from './HeadSource';
 const Footer = () => {
+  const classes = Foot();
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#121212',
-        justifyContent: 'center',
-        padding: '30px',
-      }}
-    >
+    <Box className={classes.root}>
       <Box>
         <Box
           sx={{

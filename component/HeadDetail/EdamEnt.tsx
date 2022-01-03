@@ -1,32 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Box } from '@mui/system';
 
 import Typography from '@mui/material/Typography';
-
+import { fontStyle } from '../HMF/HeadSource';
+import { CardMedia } from '@mui/material';
 const EdamEnt = () => {
+  const classes = fontStyle();
+
   return (
-    <Box
-      sx={{
-        position: 'absolute',
-        top: '37%',
-        zIndex: 0,
-        p: '0px 15px 0px 15px',
-        width: '100%',
-        overflow: 'hidden',
-        backgroundColor: 'transparent',
-      }}
-    >
-      <Typography fontSize="54px" color="white" fontFamily="serif">
+    <Box className={classes.root}>
+      <h1 style={{ marginBottom: 0, marginTop: 0 }} className="Edam">
         EDAM
-      </Typography>
-      <Typography
-        fontWeight="600"
-        color="white"
-        fontFamily="serif"
-        variant="h3"
-      >
-        Entertainment
-      </Typography>
+      </h1>
+      <h2 style={{ marginBottom: 0, marginTop: 0 }} className="Entertai">
+        Entertaiment
+      </h2>
     </Box>
   );
 };
