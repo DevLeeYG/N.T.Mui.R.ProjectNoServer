@@ -84,6 +84,11 @@ export const style = {
 export const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.up('xs')]: {
+      display: 'flex',
+      width: '375px',
+      height: '812px',
+    },
+    [theme.breakpoints.up('sm')]: {
       backgroundColor: 'black',
     },
     [theme.breakpoints.up('md')]: {

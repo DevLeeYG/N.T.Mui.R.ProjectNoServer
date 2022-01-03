@@ -36,17 +36,8 @@ const Header = () => {
   const [mouseHover, setMouseHover] = useState<Boolean>(false);
   const classes = useStyles();
   const menu = dummy.map((el) => {
-    return <HeadSapn>{el.text}</HeadSapn>;
+    return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
   });
-
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <Box
@@ -56,8 +47,24 @@ const Header = () => {
         color: 'white',
       }}
     >
-      <AppBar sx={{ backgroundColor: 'transparent', p: 0.5, boxShadow: 0 }}>
-        <Toolbar sx={{ width: '100%' }}>
+      <AppBar
+        sx={{
+          backgroundColor: 'transparent',
+          p: 0.5,
+          boxShadow: 0,
+          width: '100%',
+          minHeight: '64px',
+        }}
+      >
+        <Toolbar
+          sx={{
+            width: '100%',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            minHeight: '64px',
+            margin: 0,
+          }}
+        >
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link passHref href="/">
               <a>
@@ -70,36 +77,42 @@ const Header = () => {
               </a>
             </Link>
           </Typography>
-          <PopupState variant="popper">
-            {(popupState) => (
-              <div>
-                <Button sx={{ color: 'white' }} {...bindToggle(popupState)}>
-                  KOR{' '}
-                  <ArrowDropDownIcon
-                    sx={{
-                      fontSize: '35px',
-                      paddingBottom: '5px',
-                    }}
-                  />
-                </Button>
-                <Popper {...bindPopper(popupState)} transition>
-                  {({ TransitionProps }) => (
-                    <Fade {...TransitionProps}>
-                      <Paper
-                        sx={{
-                          marginRight: 1.5,
-                          borderRadius: '0px 0px 5px 5px',
-                        }}
-                      >
-                        <Typography sx={{ p: 2 }}>ENG</Typography>
-                        <Typography sx={{ p: 2 }}>CHN</Typography>
-                      </Paper>
-                    </Fade>
-                  )}
-                </Popper>
-              </div>
-            )}
-          </PopupState>
+
+          <div>
+            <Box
+              onMouseEnter={() => setMouseHover(true)}
+              sx={{
+                right: 50,
+                top: 10,
+                color: 'white',
+                display: 'flex',
+                fontSize: '20px',
+                alignItems: 'center',
+              }}
+            >
+              <Box>KOR</Box>
+              <ArrowDropDownIcon
+                sx={{
+                  fontSize: '2.5rem',
+                }}
+              />
+            </Box>
+            {mouseHover ? (
+              <Paper
+                onMouseLeave={() => setMouseHover(false)}
+                sx={{
+                  position: 'absolute',
+                  top: '64px',
+                  right: 50,
+                  marginRight: 1.5,
+                  borderRadius: '0px 0px 5px 5px',
+                }}
+              >
+                <Typography sx={{ p: 2 }}>ENG</Typography>
+                <Typography sx={{ p: 2 }}>CHN</Typography>
+              </Paper>
+            ) : null}
+          </div>
 
           <Sidebar />
         </Toolbar>

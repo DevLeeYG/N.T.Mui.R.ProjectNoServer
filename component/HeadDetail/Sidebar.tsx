@@ -69,13 +69,10 @@ const Sidebar = () => {
           onClick={handleDrawerOpen}
           edge="start"
           sx={{
-            minHeight: 64,
-
-            mr: -1,
             ...(open && { display: 'none' }),
           }}
         >
-          <MenuIcon />
+          <MenuIcon fontSize="large" />
         </IconButton>
       ) : null}
 
