@@ -1,49 +1,40 @@
 import { Box, CardMedia, Typography } from '@mui/material';
 import React from 'react';
 import AppLayout from '../AppLayout';
-import { Foot } from './HeadSource';
+import { Foot, Footsns, Sns, Text } from './HeadSource';
 const Footer = () => {
   const classes = Foot();
+  const classesn = Footsns();
+  const sns = Sns();
+  const text = Text();
   return (
     <Box className={classes.root}>
       <Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: '10px',
-          }}
-        >
+        <Box className={classesn.root}>
+          <CardMedia className={sns.root} component="img" src="img/naver.jpg" />
+          <CardMedia className={sns.root} component="img" src="img/bird.jpg" />
+          <CardMedia className={sns.root} component="img" src="img/insta.jpg" />
           <CardMedia
-            sx={{ width: '30px' }}
-            component="img"
-            src="img/naver.jpg"
-          />
-          <CardMedia
-            sx={{ width: '30px' }}
-            component="img"
-            src="img/bird.jpg"
-          />
-          <CardMedia
-            sx={{ width: '30px' }}
-            component="img"
-            src="img/insta.jpg"
-          />
-          <CardMedia
-            sx={{ width: '30px' }}
+            className={sns.root}
             component="img"
             src="img/youtube.jpg"
           />
         </Box>
         <Box>
           <Typography
-            sx={{ textAlign: 'center', marginBottom: '30px' }}
+            className={text.root}
+            sx={{ marginBottom: '10px' }}
             color="white"
           >
             Covered By DeveLeeYG
           </Typography>
         </Box>
-        <Box sx={{ fontSize: '5px' }} textAlign="center" color="white">
+        <Box
+          className={text.root}
+          sx={{ fontSize: '5px' }}
+          textAlign="center"
+          color="white"
+        >
           &copy; 2022.01.01 DevLeeYG.All rights reserved.
         </Box>
       </Box>

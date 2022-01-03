@@ -1,19 +1,3 @@
-import React, { useMemo, useState } from 'react';
-import {
-  CardMedia,
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  IconButton,
-  Button,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
-import styled from 'styled-components';
-import MenuIcon from '@mui/icons-material/Menu';
-
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { makeStyles } from '@material-ui/core';
 
 type dummys = { id: number; text: string }[];
@@ -138,7 +122,7 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xl')]: {
       width: '70%',
 
-      height: '100%',
+      height: '70%',
     },
   },
 }));
@@ -184,7 +168,9 @@ export const fontStyle = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xl')]: {
       position: 'absolute',
-      top: 100,
+      top: '30%',
+      right: '35%',
+      width: '1300px',
 
       fontSize: '60px',
     },
@@ -235,10 +221,43 @@ export const Foot = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {},
     [theme.breakpoints.up('sm')]: {
       justifyContent: 'right',
-      fontSize: '100px',
+    },
+  },
+}));
+
+export const Footsns = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+
+    justifyContent: 'center',
+    marginBottom: '10px',
+
+    [theme.breakpoints.up('sm')]: {
+      justifyContent: 'right',
+    },
+  },
+}));
+
+export const Sns = makeStyles((theme) => ({
+  root: {
+    width: '30px',
+
+    [theme.breakpoints.up('sm')]: {
+      width: '50px',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '30px',
+    },
+  },
+}));
+
+export const Text = makeStyles((theme) => ({
+  root: {
+    textAlign: 'center',
+
+    [theme.breakpoints.up('sm')]: {
+      textAlign: 'right',
     },
     [theme.breakpoints.up('md')]: {},
-    [theme.breakpoints.up('lg')]: {},
-    [theme.breakpoints.up('xl')]: {},
   },
 }));
