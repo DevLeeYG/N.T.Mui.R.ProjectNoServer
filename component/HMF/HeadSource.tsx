@@ -85,7 +85,7 @@ export const HeaderStyle = makeStyles((theme) => ({
     width: '100%',
     minHeight: '64px',
 
-    [theme.breakpoints.up('sm')]: { padding: '35px' },
+    [theme.breakpoints.up('sm')]: { padding: '30px 0px 30px 30px' },
   },
 }));
 

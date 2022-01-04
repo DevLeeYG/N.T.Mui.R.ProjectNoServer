@@ -48,7 +48,7 @@ const listdummy = sidebarlist.map((text, i) => {
 });
 
 const Sidebar = () => {
-  const isXs = useMediaQuery('(max-width:768px)');
+  const isXs = useMediaQuery('(max-width:1000px)');
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -68,9 +68,7 @@ const Sidebar = () => {
           aria-label="open drawer"
           onClick={handleDrawerOpen}
           edge="start"
-          sx={{
-            ...(open && { display: 'none' }),
-          }}
+          sx={{ marginLeft: 2, ...(open && { display: 'none' }) }}
         >
           <MenuIcon fontSize="large" />
         </IconButton>
