@@ -16,14 +16,13 @@ const style = {
   fontWeight: 800,
 };
 
-const Headlink = () => {
+const Headlink = ({ setMouseHover }: any) => {
   const md = useMediaQuery('(max-width:1000px)');
 
-  const [mouseHover, setMouseHover] = useState<Boolean>(false);
   return (
     <div>
       {!md ? (
-        <Box sx={{ display: 'flex' }}>
+        <Box onMouseEnter={() => setMouseHover(false)} sx={{ display: 'flex' }}>
           <Typography sx={style}></Typography>
           <Typography sx={style}>NOTICE</Typography>
           <Typography sx={style}>ARTIST</Typography>

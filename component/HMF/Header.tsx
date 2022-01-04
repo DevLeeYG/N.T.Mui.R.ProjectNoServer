@@ -72,7 +72,7 @@ const Header = () => {
                 alignItems: 'center',
               }}
             >
-              <Headlink />
+              <Headlink setMouseHover={setMouseHover} />
               <Typography onClick={() => setMouseHover(!mouseHover)}>
                 KOR
               </Typography>
