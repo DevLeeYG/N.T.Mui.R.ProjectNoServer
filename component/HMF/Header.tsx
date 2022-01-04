@@ -14,13 +14,13 @@ import { useStyles } from './HeadSource';
 import Link from 'next/link';
 import Sidebar from '../HeadDetail/Sidebar';
 import { HeaderStyle, Headerimg } from './HeadSource';
+import Headlink from '../HeadDetail/Headlink';
 const HeadSapn = styled.span`
   margin-left: 10px;
   margin-right: 10px;
 `;
 
 const Header = () => {
-  const [mouseHover, setMouseHover] = useState<Boolean>(false);
   const classes = HeaderStyle();
   const classesI = Headerimg();
 
@@ -62,7 +62,6 @@ const Header = () => {
 
           <div>
             <Box
-              onMouseEnter={() => setMouseHover(true)}
               sx={{
                 right: 50,
                 top: 10,
@@ -72,28 +71,14 @@ const Header = () => {
                 alignItems: 'center',
               }}
             >
-              <Box>KOR</Box>
+              <Headlink />
+
               <ArrowDropDownIcon
                 sx={{
                   fontSize: '2.5rem',
                 }}
               />
             </Box>
-            {mouseHover ? (
-              <Paper
-                onMouseLeave={() => setMouseHover(false)}
-                sx={{
-                  position: 'absolute',
-                  top: '64px',
-                  right: 50,
-                  marginRight: 1.5,
-                  borderRadius: '0px 0px 5px 5px',
-                }}
-              >
-                <Typography sx={{ p: 2 }}>ENG</Typography>
-                <Typography sx={{ p: 2 }}>CHN</Typography>
-              </Paper>
-            ) : null}
           </div>
 
           <Sidebar />

@@ -1,20 +1,18 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import {
-  CardMedia,
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  IconButton,
-  Button,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
-import Container from '@mui/material/Container';
+import React from 'react';
+import { CardMedia, Box } from '@mui/material';
 import { useStyles } from './HeadSource';
-
+import { keyframes } from '@emotion/react';
 const Main = () => {
   const classes = useStyles();
+
+  const zoom = keyframes`
+
+50% {
+  transform: scale(1.1,1.1);
+}
+
+  }
+  `;
 
   return (
     <Box
@@ -26,11 +24,14 @@ const Main = () => {
         backgroundColor: '#121212',
       }}
     >
-      <CardMedia
-        className={classes.root}
-        component="img"
-        src="/img/home1.jpg"
-      />
+      <Box className={classes.root} sx={{ overflow: 'hidden' }}>
+        <CardMedia
+          sx={{ animation: `${zoom} 11s ease-out infinite;` }}
+          className={classes.root}
+          component="img"
+          src="/img/home1.jpg"
+        />
+      </Box>
     </Box>
   );
 };
