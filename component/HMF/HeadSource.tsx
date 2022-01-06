@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
 import { styled } from '@mui/material/styles';
+import transitions from '@material-ui/core/styles/transitions';
 type dummys = { id: number; text: string }[];
 const BtoU = keyframes`
   from {
@@ -100,6 +101,7 @@ export const Headerimg = makeStyles((theme) => ({
 export const useStyles = makeStyles((theme) => ({
   root: {
     zIndex: 4,
+    transition: '500ms',
     [theme.breakpoints.up('xs')]: {
       display: 'flex',
       position: 'absolute',
@@ -146,7 +148,7 @@ export const fontStyle = makeStyles((theme) => ({
       top: '37%',
       color: 'white',
       fontSize: '60px',
-      paddingLeft: 50,
+      paddingLeft: 10,
       animation: `${BtoU}  0.5s linear `,
       backgroundColor: 'transparent',
     },
