@@ -91,9 +91,8 @@ export const HeaderStyle = makeStyles((theme) => ({
 
 export const Headerimg = makeStyles((theme) => ({
   root: {
-    width: 80,
     transition: '300ms',
-
+    [theme.breakpoints.up('xs')]: { padding: '10px', width: 100 },
     [theme.breakpoints.up('sm')]: { padding: '20px', width: 200 },
   },
 }));

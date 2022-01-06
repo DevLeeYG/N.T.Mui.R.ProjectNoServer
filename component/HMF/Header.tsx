@@ -68,18 +68,21 @@ const Header = () => {
             margin: 0,
           }}
         >
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link passHref href="/">
-              <a>
-                <CardMedia
-                  className={classesI.root}
-                  component="img"
-                  image="/img/sub-logo.png"
-                  alt="stage"
-                />
-              </a>
-            </Link>
-          </Typography>
+          <Link href="/">
+            <a>
+              <CardMedia
+                className={classesI.root}
+                component="img"
+                image="/img/sub-logo.png"
+                alt="stage"
+              />
+            </a>
+          </Link>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          ></Typography>
 
           <div>
             <Box sx={style}>
