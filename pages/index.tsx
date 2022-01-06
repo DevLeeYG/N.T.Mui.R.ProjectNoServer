@@ -6,7 +6,7 @@ import Footer from '../component/HMF/Footer';
 import Main from '../component/HMF/Main';
 import EdamEnt from '../component/HeadDetail/EdamEnt';
 import Footerimg from '../component/HeadDetail/Footerimg';
-
+import { useSelector } from 'react-redux';
 const Home: NextPage = () => {
   return (
     <div>

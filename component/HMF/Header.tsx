@@ -28,6 +28,23 @@ const Header = () => {
   const menu = dummy.map((el) => {
     return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
   });
+  let style = {
+    right: 50,
+    top: 10,
+    color: 'white',
+    display: 'flex',
+    fontSize: '20px',
+    alignItems: 'center',
+  };
+
+  const checkHref = () => {
+    if (location.href !== 'http://localhost:3000/') {
+      style.color = 'black';
+    } else {
+      return;
+    }
+  };
+  checkHref();
 
   return (
     <Box
@@ -62,16 +79,7 @@ const Header = () => {
           </Typography>
 
           <div>
-            <Box
-              sx={{
-                right: 50,
-                top: 10,
-                color: 'white',
-                display: 'flex',
-                fontSize: '20px',
-                alignItems: 'center',
-              }}
-            >
+            <Box sx={style}>
               <Headlink setMouseHover={setMouseHover} />
               <Typography onClick={() => setMouseHover(!mouseHover)}>
                 KOR
