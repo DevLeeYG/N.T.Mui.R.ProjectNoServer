@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CardMedia,
   AppBar,
@@ -15,19 +15,13 @@ import Link from 'next/link';
 import Sidebar from '../HeadDetail/Sidebar';
 import { HeaderStyle, Headerimg } from './HeadSource';
 import Headlink from '../HeadDetail/Headlink';
+import { useRouter } from 'next/router';
 const HeadSapn = styled.span`
   margin-left: 10px;
   margin-right: 10px;
 `;
 
 const Header = () => {
-  const [mouseHover, setMouseHover] = useState<Boolean>(false);
-  const classes = HeaderStyle();
-  const classesI = Headerimg();
-
-  const menu = dummy.map((el) => {
-    return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
-  });
   let style = {
     right: 50,
     top: 10,
@@ -36,15 +30,24 @@ const Header = () => {
     fontSize: '20px',
     alignItems: 'center',
   };
-
-  const checkHref = () => {
-    if (location.href !== 'http://localhost:3000/') {
+  const router = useRouter();
+  const href = () => {
+    if (window.location.pathname.length > 1) {
       style.color = 'black';
     } else {
       return;
     }
   };
-  checkHref();
+  href();
+
+  const [mouseHover, setMouseHover] = useState<Boolean>(false);
+
+  const classes = HeaderStyle();
+  const classesI = Headerimg();
+
+  const menu = dummy.map((el) => {
+    return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
+  });
 
   return (
     <Box

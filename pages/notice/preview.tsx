@@ -8,9 +8,10 @@ import Link from 'next/link';
 const preview = () => {
   return (
     <AppLayout>
-      <Box sx={{ width: '100%', height: '100vh' }}></Box>
+      <Box className="1" sx={{ width: '100%', height: '100vh' }}></Box>
     </AppLayout>
   );
 };
 
 export default preview;
+/**게시판 틀을 만들자 */
