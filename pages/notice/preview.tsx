@@ -28,17 +28,15 @@ const preview = () => {
     getList();
   }, []);
 
-  console.log('notice', notice);
-
   const a = notice.map((el, idx) => {
     const day = el.date.substr(0, 7);
     const yearMonth = el.date.substr(0, 2);
     const preview = el.post.substr(0, 70);
     return (
       <Box key={el.id} className={smallB.root}>
-        <Box sx={{ display: { xs: 'none' } }}>
-          <Box>{yearMonth}</Box>
-          <Box>{day}</Box>
+        <Box className={smallB.YMD}>
+          <Box className={smallB.Ym}>{yearMonth}</Box>
+          <Box className={smallB.Day}>{day}</Box>
         </Box>
         <Box>
           <Box className={smallB.title}>[아이유]아이유 조각집 발매 안내</Box>

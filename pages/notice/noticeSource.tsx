@@ -42,11 +42,10 @@ export const MiddleBox = makeStyles((theme) => ({
 export const SmallBox = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    background: 'yellow',
     padding: '30px',
     width: '100%',
     height: '100%',
-    borderBottom: '1px solid',
+    borderBottom: '1px solid #DDDDDD',
     [theme.breakpoints.up('sm')]: {
       paddingRight: '15px',
       paddingLeft: `15px`,
@@ -67,27 +66,28 @@ export const SmallBox = makeStyles((theme) => ({
       marginBottom: '20px',
     },
     [theme.breakpoints.up('sm')]: {
-      fontSize: '30px',
+      fontSize: '25px',
       fontWeight: 700,
       marginBottom: '20px',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '40px',
+      fontSize: '30px',
       fontWeight: 700,
       marginBottom: '20px',
     },
   },
   preview: {
+    padding: 20,
     [theme.breakpoints.up('xs')]: {
-      fontSize: '15px',
+      fontSize: '10px',
       color: `#818181`,
     },
     [theme.breakpoints.up('sm')]: {
-      fontSize: '20px',
+      fontSize: '12px',
       color: `#818181`,
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '30px',
+      fontSize: '13px',
       color: `#818181`,
     },
   },
@@ -104,6 +104,56 @@ export const SmallBox = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       marginLeft: 6,
       marginRight: 6,
+    },
+  },
+  YMD: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 8,
+    fontFamily: 'Roboto !important',
+    color: '#777',
+
+    margin: 0,
+
+    width: '200px',
+
+    [theme.breakpoints.up('xs')]: {
+      display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  },
+
+  Ym: {
+    display: 'flex',
+    fontSize: 70,
+    textAlign: 'center',
+    lineHeight: '60px',
+    width: '100%',
+    height: '50%',
+
+    [theme.breakpoints.up('xs')]: {
+      display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  },
+  Day: {
+    display: 'flex',
+    fontSize: 35,
+    textAlign: 'center',
+    lineHeight: '60px',
+    width: '100%',
+    height: '50%',
+
+    [theme.breakpoints.up('xs')]: {
+      display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
     },
   },
 }));
