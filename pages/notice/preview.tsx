@@ -20,16 +20,15 @@ const preview = () => {
   }[];
   const [notice, setNotice] = useState<Data>([]);
 
-  const getList = () => {
-    axios.get(noticeApi).then((data) => setNotice(data.data));
-  };
-
   useEffect(() => {
+    const getList = async () => {
+      const result = await axios.get(noticeApi);
+      setNotice(result.data);
+    };
     getList();
   }, []);
 
   const a = notice.map((el, idx) => {
-    console.log('123123123');
     const day = el.date.substr(0, 7);
     const yearMonth = el.date.substr(8);
     const preview = el.post.substr(0, 70);
