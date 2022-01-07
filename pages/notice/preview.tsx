@@ -21,7 +21,7 @@ const preview = () => {
   const [notice, setNotice] = useState<Data>([]);
 
   const getList = () => {
-    return axios.get(noticeApi).then((data) => setNotice(data.data));
+    axios.get(noticeApi).then((data) => setNotice(data.data));
   };
 
   useEffect(() => {
@@ -29,8 +29,9 @@ const preview = () => {
   }, []);
 
   const a = notice.map((el, idx) => {
+    console.log('123123123');
     const day = el.date.substr(0, 7);
-    const yearMonth = el.date.substr(0, 2);
+    const yearMonth = el.date.substr(8);
     const preview = el.post.substr(0, 70);
     return (
       <Box key={el.id} className={smallB.root}>
@@ -39,7 +40,7 @@ const preview = () => {
           <Box className={smallB.Day}>{day}</Box>
         </Box>
         <Box>
-          <Box className={smallB.title}>[아이유]아이유 조각집 발매 안내</Box>
+          <Box className={smallB.title}>{el.title}</Box>
           <Box className={smallB.preview}>
             <Box>{preview}...</Box>
 

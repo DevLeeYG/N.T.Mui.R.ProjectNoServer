@@ -110,7 +110,10 @@ export const SmallBox = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 8,
+    paddingTop: 15,
+    paddingLeft: 8,
+    paddingRight: 8,
+
     fontFamily: 'Roboto !important',
     color: '#777',
 
