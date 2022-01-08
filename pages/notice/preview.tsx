@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import AppLayout from '../../component/AppLayout';
 import axios from 'axios';
 import { BigBox, MiddleBox, SmallBox } from './noticeSource';
+import PaginationButtons from '../../component/paginate/pagination';
 
 const preview = () => {
   const classes = BigBox();
@@ -62,7 +63,19 @@ const preview = () => {
   return (
     <AppLayout>
       <Box className={classes.root}>
-        <Box className={middleB.root}>{a}</Box>
+        <Box className={middleB.root}>
+          {a}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+            }}
+          >
+            <PaginationButtons />
+          </Box>
+        </Box>
       </Box>
     </AppLayout>
   );
