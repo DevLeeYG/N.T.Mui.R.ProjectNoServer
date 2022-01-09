@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 import AppLayout from '../../component/AppLayout';
 import axios from 'axios';
 import { BigBox, MiddleBox, SmallBox } from './noticeSource';
-import PaginationButtons from '../../component/paginate/pagination';
-
+import Paging from '../../component/paginate/Pagination';
 const preview = () => {
   const classes = BigBox();
   const middleB = MiddleBox();
@@ -73,7 +72,7 @@ const preview = () => {
               width: '100%',
             }}
           >
-            <PaginationButtons />
+            <Paging />
           </Box>
         </Box>
       </Box>
