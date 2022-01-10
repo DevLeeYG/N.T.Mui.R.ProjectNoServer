@@ -6,9 +6,11 @@ import axios from 'axios';
 import { BigBox, MiddleBox, SmallBox } from './noticeSource';
 import Paging from '../../component/paginate/Pagination';
 const preview = () => {
+  const [page, setPage] = useState(1);
+  console.log('123', page);
   const classes = BigBox();
   const middleB = MiddleBox();
-  const noticeApi = 'http://localhost:3000/api/notice';
+  const noticeApi = `http://localhost:3000/api/notice/`;
   const smallB = SmallBox();
   type Data = {
     id: number;
@@ -19,14 +21,25 @@ const preview = () => {
     post: string;
   }[];
   const [notice, setNotice] = useState<Data>([]);
-
+  const [dataSize, setDataSize] = useState<number>(0);
+  console.log('notice', notice);
   useEffect(() => {
     const getList = async () => {
       const result = await axios.get(noticeApi);
-      setNotice(result.data);
+      setNotice(result.data.slice(0, 3));
+      setDataSize(result.data.length);
     };
     getList();
   }, []);
+
+  useEffect(() => {
+    const sliceList = async () => {
+      const data = await axios.get(`http://localhost:3000/api/notice/${page}`);
+      console.log('data!!!!', data);
+      setNotice(data.data);
+    };
+    sliceList();
+  }, [page]);
 
   const a = notice.map((el, idx) => {
     const day = el.date.substr(0, 7);
@@ -42,7 +55,6 @@ const preview = () => {
           <Box className={smallB.title}>{el.title}</Box>
           <Box className={smallB.preview}>
             <Box>{preview}...</Box>
-
             <Box className={smallB.bottomBox}>
               <Box
                 sx={{ display: { md: 'none' } }}
@@ -72,7 +84,14 @@ const preview = () => {
               width: '100%',
             }}
           >
-            <Paging />
+            <Paging
+              page={page}
+              setPage={setPage}
+              setNotice={setNotice}
+              noticeApi={noticeApi}
+              getAlldata={notice}
+              dataSize={dataSize}
+            />
           </Box>
         </Box>
       </Box>

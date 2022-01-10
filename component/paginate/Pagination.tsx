@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 import Pagination from 'react-js-pagination';
-const Paging = () => {
-  const [page, setPage] = useState(1);
+const Paging = ({ dataSize, page, setPage }: any) => {
   const handlePageChange = (page: any) => {
     setPage(page);
   };
@@ -10,7 +10,7 @@ const Paging = () => {
     <Pagination
       activePage={page}
       itemsCountPerPage={5} //한화면에 나오는 카운트
-      totalItemsCount={450} //총 갯수
+      totalItemsCount={dataSize} //총 갯수
       pageRangeDisplayed={5} //페이지 표시 갯수
       prevPageText={'‹'}
       nextPageText={'›'}
