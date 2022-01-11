@@ -117,24 +117,47 @@ const dummy = [
     title: '12',
     post: '안녕하세요.EDAM엔터테인먼트입니다.EDAM엔터테인먼트는 공식 홈페이지를 새롭게 오픈하였습니다. 공식 홈페이지를 통해 소속 아티스트의 정보를 전할 예정이오니 많은 관심과 이용 바랍니다. 항상 발전하며, 뻔한 생각을 뒤집어 시대를 뛰어넘는 EDAM엔터테인먼트가 되겠습니다.감사합니다.',
   },
+  {
+    id: 13,
+    user: '7',
+    date: dateFormat(today),
+    hit: 4,
+    title: '13',
+    post: 'ggggg',
+  },
 ].reverse();
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
 
-  const query = req.query.page;
+  console.log('123123', req.query);
+  const id = req.query;
 
-  let currentPage = Number(query);
-  let postsPerPage = 3;
-  let indexOfLastPost = currentPage * postsPerPage;
-  let indexOfFirstPost = indexOfLastPost - postsPerPage;
-  let currentPosts = dummy.slice(indexOfFirstPost, indexOfLastPost);
-
-  if (method === 'GET' && Number(query) === 1) {
-    res.status(200).send({ count: dummy.length, data: dummy.slice(0, 4) });
-  } else if (method === 'GET' && Number(query) > 1) {
-    res.status(200).send({ count: dummy.length, data: currentPosts });
+  // if (page) {
+  //   for (let n = 0; n < dummy.length; n++) {
+  //     if (n === Number(page)) {
+  //       return res.status(200).send(dummy[Number(page)]);
+  //     }
+  //   }
+  // }
+  if (method === 'GET' && id.id === 'controller') {
+    res.status(200).send({ count: dummy.length, data: dummy });
   }
+  if (method === 'GET' && Number(id.id) !== NaN) {
+    res.status(200).send({ data: dummy[Number(id.id)] });
+  }
+
+  // let currentPage = Number(query);
+  // let postsPerPage = 3;
+  // let indexOfLastPost = currentPage * postsPerPage;
+  // let indexOfFirstPost = indexOfLastPost - postsPerPage;
+  // let currentPosts = dummy.slice(indexOfFirstPost, indexOfLastPost);
+
+  // if (method === 'GET' && Number(query) === 1) {
+  //   res.status(200).send({ count: dummy.length, data: dummy.slice(0, 4) });
+  // } else if (method === 'GET' && Number(query) > 1) {
+  // res.status(200).send({ count: dummy.length, data: dummy });
+  // }
 }
 // dummy.slice(Number(query), Number(query + '3'))
 export default handler;

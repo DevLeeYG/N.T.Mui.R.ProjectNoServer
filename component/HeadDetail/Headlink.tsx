@@ -18,8 +18,6 @@ const style = {
   fontWeight: 800,
 };
 
-console.log(style.marginLeft);
-
 const Headlink = ({ setMouseHover }: any) => {
   const md = useMediaQuery('(max-width:1000px)');
   const router = useRouter();
