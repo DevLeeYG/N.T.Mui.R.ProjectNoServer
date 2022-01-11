@@ -6,37 +6,28 @@ import axios from 'axios';
 import { BigBox, MiddleBox, SmallBox } from './noticeSource';
 import Paging from '../../component/paginate/Pagination';
 const preview = () => {
-  const [page, setPage] = useState(1);
-  console.log('123', page);
   const classes = BigBox();
   const middleB = MiddleBox();
   const noticeApi = `http://localhost:3000/api/notice/`;
   const smallB = SmallBox();
   type Data = {
     id: number;
-    date: Date;
+    date: string;
     user: string;
     hit: number;
     title: string;
     post: string;
   }[];
+  const [page, setPage] = useState(1);
   const [notice, setNotice] = useState<Data>([]);
   const [dataSize, setDataSize] = useState<number>(0);
-  console.log('notice', notice);
-  useEffect(() => {
-    const getList = async () => {
-      const result = await axios.get(noticeApi);
-      setNotice(result.data.slice(0, 3));
-      setDataSize(result.data.length);
-    };
-    getList();
-  }, []);
 
   useEffect(() => {
     const sliceList = async () => {
       const data = await axios.get(`http://localhost:3000/api/notice/${page}`);
-      console.log('data!!!!', data);
-      setNotice(data.data);
+      console.log('data', data);
+      setNotice(data.data.data);
+      setDataSize(data.data.count);
     };
     sliceList();
   }, [page]);

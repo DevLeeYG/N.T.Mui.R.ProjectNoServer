@@ -9,9 +9,9 @@ const Paging = ({ dataSize, page, setPage }: any) => {
   return (
     <Pagination
       activePage={page}
-      itemsCountPerPage={5} //한화면에 나오는 카운트
+      itemsCountPerPage={3} //한화면에 나오는 카운트
       totalItemsCount={dataSize} //총 갯수
-      pageRangeDisplayed={5} //페이지 표시 갯수
+      pageRangeDisplayed={Math.ceil(dataSize / 3)} //페이지 표시 갯수
       prevPageText={'‹'}
       nextPageText={'›'}
       onChange={handlePageChange}
