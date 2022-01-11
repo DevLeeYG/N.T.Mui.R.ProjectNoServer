@@ -129,22 +129,15 @@ const dummy = [
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
+  let data = req.query.id;
+  console.log('req', req.query.id);
 
-  console.log('123123', req.query);
-  const id = req.query;
-
-  // if (page) {
-  //   for (let n = 0; n < dummy.length; n++) {
-  //     if (n === Number(page)) {
-  //       return res.status(200).send(dummy[Number(page)]);
-  //     }
-  //   }
-  // }
-  if (method === 'GET' && id.id === 'controller') {
-    res.status(200).send({ count: dummy.length, data: dummy });
-  }
-  if (method === 'GET' && Number(id.id) !== NaN) {
-    res.status(200).send({ data: dummy[Number(id.id)] });
+  if (data === 'controller') {
+    res.status(200).send(dummy);
+  } else {
+    if (Number(data) >= 1) {
+      res.status(200).send(dummy[Number(data)]);
+    }
   }
 
   // let currentPage = Number(query);

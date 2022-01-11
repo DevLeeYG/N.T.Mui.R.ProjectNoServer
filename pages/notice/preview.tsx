@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
@@ -32,19 +33,19 @@ const Preview = () => {
       const data = await axios.get(
         `http://localhost:3000/api/notice/controller`,
       );
+      console.log(data);
 
-      setDataSize(data.data.count);
-      setNotice(data.data.data);
+      setDataSize(data.data.length);
+      setNotice(data.data);
     };
     sliceList();
   }, []);
 
-  const datafetch: Promise<void> = async (id: any) => {
+  const datafetch = async (id: any) => {
     const asdf = await axios
       .get(`http://localhost:3000/api/notice/${id}`)
       .catch((err) => console.log(err));
-    console.log('asdf', asdf.data);
-    <DetailViewPage data={asdf} />;
+    console.log(asdf);
   };
 
   const a = notice.map((el, idx) => {
@@ -52,10 +53,11 @@ const Preview = () => {
     const yearMonth = el.date.substr(8);
     const preview = el.post.substr(0, 70);
     return (
+      // eslint-disable-next-line react/jsx-key
       <Link href={`./${el.id}`}>
         <Box
-          onClick={() => datafetch(el.id)}
           key={el.id}
+          onClick={() => datafetch(el.id)}
           className={smallB.root}
         >
           <Box className={smallB.YMD}>
