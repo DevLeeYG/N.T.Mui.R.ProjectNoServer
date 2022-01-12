@@ -1,17 +1,20 @@
 import axios from 'axios';
-
+import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 const DetailViewPage = ({ data }: any) => {
-  console.log('!!!!!', data);
-  return <div>{data}</div>;
+  return <div>{JSON.stringify(data[0])}</div>;
 };
 
-// DetailViewPage.getServersideProps = async (props: any) => {
-//   const { data } = await axios.get(
-//     `http://localhost:3000/api/notice/controller/${props.query['page']}`,
-//   );
-//   console.log(data);
+export const getServerSideProps: GetServerSideProps = async (datas) => {
+  console.log('param!!!!!!!', datas);
+  const res = await axios.get(
+    `http://localhost:3000/api/notice/detail/${datas.query.page}`,
+  );
 
-//   return { data };
-// };
+  console.log('들어와라제발', res);
+  const data = res.data;
+
+  return { props: { data } };
+};
 
 export default DetailViewPage;

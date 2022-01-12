@@ -9,7 +9,7 @@ import Paging from '../../component/paginate/Pagination';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import DetailViewPage from './[page]';
-const Preview = () => {
+const preview = () => {
   const [page, setPage] = useState(1);
   console.log('123', page);
   const classes = BigBox();
@@ -26,27 +26,16 @@ const Preview = () => {
   }[];
   const [notice, setNotice] = useState<Data>([]);
   const [dataSize, setDataSize] = useState<number>(0);
-  const router = useRouter();
 
   useEffect(() => {
     const sliceList = async () => {
-      const data = await axios.get(
-        `http://localhost:3000/api/notice/controller`,
-      );
-      console.log(data);
+      const data = await axios.get(`http://localhost:3000/api/notice/${page}`);
 
-      setDataSize(data.data.length);
-      setNotice(data.data);
+      setDataSize(data.data.count);
+      setNotice(data.data.data);
     };
     sliceList();
-  }, []);
-
-  const datafetch = async (id: any) => {
-    const asdf = await axios
-      .get(`http://localhost:3000/api/notice/${id}`)
-      .catch((err) => console.log(err));
-    console.log(asdf);
-  };
+  }, [page]);
 
   const a = notice.map((el, idx) => {
     const day = el.date.substr(0, 7);
@@ -55,11 +44,7 @@ const Preview = () => {
     return (
       // eslint-disable-next-line react/jsx-key
       <Link href={`./${el.id}`}>
-        <Box
-          key={el.id}
-          onClick={() => datafetch(el.id)}
-          className={smallB.root}
-        >
+        <Box key={el.id} className={smallB.root}>
           <Box className={smallB.YMD}>
             <Box className={smallB.Ym}>{yearMonth}</Box>
             <Box className={smallB.Day}>{day}</Box>
@@ -113,4 +98,4 @@ const Preview = () => {
   );
 };
 
-export default Preview;
+export default preview;

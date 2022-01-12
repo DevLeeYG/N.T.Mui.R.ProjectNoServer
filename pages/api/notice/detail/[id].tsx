@@ -131,17 +131,11 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;
   let query = req.query.id;
 
-  let currentPage = Number(query);
-  let postsPerPage = 3;
-  let indexOfLastPost = currentPage * postsPerPage;
-  let indexOfFirstPost = indexOfLastPost - postsPerPage;
-  let currentPosts = dummy.slice(indexOfFirstPost, indexOfLastPost);
+  const filtered = dummy.filter((dummy) => dummy.id === Number(query));
 
-  if (method === 'GET' && Number(query) === 1) {
-    res.status(200).send({ count: dummy.length, data: dummy.slice(0, 3) });
-  } else if (method === 'GET' && Number(query) > 1) {
-    res.status(200).send({ count: dummy.length, data: currentPosts });
+  if (query) {
+    res.status(200).send(filtered);
   }
 }
-// dummy.slice(Number(query), Number(query + '3'))
+
 export default handler;
