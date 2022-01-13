@@ -27,7 +27,7 @@ const Headlink = ({ setMouseHover }: any) => {
         <Box onMouseEnter={() => setMouseHover(false)} sx={{ display: 'flex' }}>
           <Typography sx={style}></Typography>
 
-          <Link href="/notice/preview">
+          <Link href="/notice/preview/1">
             <a>
               <Typography sx={style}>NOTICE</Typography>
             </a>

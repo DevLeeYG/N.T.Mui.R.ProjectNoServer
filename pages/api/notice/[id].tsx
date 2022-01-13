@@ -138,9 +138,13 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   let currentPosts = dummy.slice(indexOfFirstPost, indexOfLastPost);
 
   if (method === 'GET' && Number(query) === 1) {
-    res.status(200).send({ count: dummy.length, data: dummy.slice(0, 3) });
+    res
+      .status(200)
+      .send({ count: dummy.length, data: dummy.slice(0, 3), page: query });
   } else if (method === 'GET' && Number(query) > 1) {
-    res.status(200).send({ count: dummy.length, data: currentPosts });
+    res
+      .status(200)
+      .send({ count: dummy.length, data: currentPosts, page: query });
   }
 }
 // dummy.slice(Number(query), Number(query + '3'))

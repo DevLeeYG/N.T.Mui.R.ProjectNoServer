@@ -68,16 +68,14 @@ const Header = () => {
             margin: 0,
           }}
         >
-          <Link href="/">
-            <a>
-              <CardMedia
-                className={classesI.root}
-                component="img"
-                image="/img/sub-logo.png"
-                alt="stage"
-              />
-            </a>
-          </Link>
+          <CardMedia
+            onClick={() => router.push('/')}
+            className={classesI.root}
+            component="img"
+            image="/img/sub-logo.png"
+            alt="stage"
+          />
+
           <Typography
             variant="h6"
             component="div"
