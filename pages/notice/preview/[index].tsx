@@ -5,13 +5,14 @@ import React, { useEffect, useState } from 'react';
 import AppLayout from '../../../component/AppLayout';
 import axios from 'axios';
 import { BigBox, MiddleBox, SmallBox } from '../noticeSource';
-import Paging from '../../../component/paginate/Pagination';
+import Pagination from 'react-js-pagination';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 
-const preview = ({ getList }: any) => {
-  const [page, setPage] = useState(1);
+const preview = ({ getList, sliceList }: any) => {
+  const router = useRouter();
+  const [page, setPage] = useState(getList.query);
 
   const classes = BigBox();
   const middleB = MiddleBox();
@@ -26,17 +27,23 @@ const preview = ({ getList }: any) => {
     post: string;
   }[];
   const [notice, setNotice] = useState<Data>(getList.data);
-  const [dataSize, setDataSize] = useState<number>(0);
+  const [dataSize, setDataSize] = useState<number>(getList.count);
+  const handlePageChange = async (page: any) => {
+    console.log('page', page);
+    const res = await axios.get(`http://localhost:3000/api/notice/${page}`);
 
-  // useEffect(() => {
-  //   const sliceList = async () => {
-  //     const data = await axios.get(`http://localhost:3000/api/notice/${page}`);
+    router.push(`/notice/preview/${page}`);
+    setPage(page);
+    setDataSize(res.data.count);
+    setNotice(res.data.data);
+  };
 
-  //     setDataSize(data.data.count);
-  //     setNotice(data.data.data);
-  //   };
-  //   sliceList();
-  // }, [page]);
+  useEffect(
+    (page) => {
+      handlePageChange(page);
+    },
+    [page],
+  );
 
   const a = notice.map((el, idx) => {
     const day = el.date.substr(0, 7);
@@ -84,13 +91,17 @@ const preview = ({ getList }: any) => {
               width: '100%',
             }}
           >
-            <Paging
-              page={page}
-              setPage={setPage}
-              setNotice={setNotice}
-              noticeApi={noticeApi}
-              getAlldata={notice}
-              dataSize={dataSize}
+            <button onClick={() => router.push('/notice/preview/3')}>
+              3번
+            </button>
+            <Pagination
+              activePage={page}
+              itemsCountPerPage={3} //한화면에 나오는 카운트
+              totalItemsCount={dataSize} //총 갯수
+              pageRangeDisplayed={Math.ceil(dataSize / 3)} //페이지 표시 갯수
+              prevPageText={'‹'}
+              nextPageText={'›'}
+              onChange={handlePageChange}
             />
           </Box>
         </Box>
@@ -100,15 +111,24 @@ const preview = ({ getList }: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (datas) => {
-  console.log('123123123', datas.query);
   const res = await axios.get(
     `http://localhost:3000/api/notice/${datas.query.index}`,
   );
 
-  console.log('들어와라제발', res);
   const getList = res.data;
 
+  console.log('123123123', getList);
   return { props: { getList } };
 };
 
 export default preview;
+{
+  /* <Paging
+              page={page}
+              setPage={setPage}
+              setNotice={setNotice}
+              noticeApi={noticeApi}
+              getAlldata={notice}
+              dataSize={dataSize}
+            /> */
+}
