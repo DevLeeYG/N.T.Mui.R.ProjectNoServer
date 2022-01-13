@@ -2,16 +2,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import AppLayout from '../../component/AppLayout';
+import AppLayout from '../../../component/AppLayout';
 import axios from 'axios';
-import { BigBox, MiddleBox, SmallBox } from './noticeSource';
-import Paging from '../../component/paginate/Pagination';
+import { BigBox, MiddleBox, SmallBox } from '../noticeSource';
+import Paging from '../../../component/paginate/Pagination';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import DetailViewPage from './[page]';
-const preview = () => {
+import { GetServerSideProps } from 'next';
+
+const preview = ({ getList }: any) => {
   const [page, setPage] = useState(1);
-  console.log('123', page);
+
   const classes = BigBox();
   const middleB = MiddleBox();
   const noticeApi = `http://localhost:3000/api/notice/`;
@@ -24,18 +25,18 @@ const preview = () => {
     title: string;
     post: string;
   }[];
-  const [notice, setNotice] = useState<Data>([]);
+  const [notice, setNotice] = useState<Data>(getList.data);
   const [dataSize, setDataSize] = useState<number>(0);
 
-  useEffect(() => {
-    const sliceList = async () => {
-      const data = await axios.get(`http://localhost:3000/api/notice/${page}`);
+  // useEffect(() => {
+  //   const sliceList = async () => {
+  //     const data = await axios.get(`http://localhost:3000/api/notice/${page}`);
 
-      setDataSize(data.data.count);
-      setNotice(data.data.data);
-    };
-    sliceList();
-  }, [page]);
+  //     setDataSize(data.data.count);
+  //     setNotice(data.data.data);
+  //   };
+  //   sliceList();
+  // }, [page]);
 
   const a = notice.map((el, idx) => {
     const day = el.date.substr(0, 7);
@@ -43,7 +44,7 @@ const preview = () => {
     const preview = el.post.substr(0, 70);
     return (
       // eslint-disable-next-line react/jsx-key
-      <Link href={`./${el.id}`}>
+      <Link href={`/notice/detail/${el.id}`}>
         <Box key={el.id} className={smallB.root}>
           <Box className={smallB.YMD}>
             <Box className={smallB.Ym}>{yearMonth}</Box>
@@ -96,6 +97,18 @@ const preview = () => {
       </Box>
     </AppLayout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (datas) => {
+  console.log('123123123', datas.query);
+  const res = await axios.get(
+    `http://localhost:3000/api/notice/${datas.query.index}`,
+  );
+
+  console.log('들어와라제발', res);
+  const getList = res.data;
+
+  return { props: { getList } };
 };
 
 export default preview;
