@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 
 const preview = ({ getList, sliceList }: any) => {
+  console.log('getlist', getList.page);
   const router = useRouter();
   const [page, setPage] = useState(getList.query);
 
@@ -28,22 +29,16 @@ const preview = ({ getList, sliceList }: any) => {
   }[];
   const [notice, setNotice] = useState<Data>(getList.data);
   const [dataSize, setDataSize] = useState<number>(getList.count);
+
   const handlePageChange = async (page: any) => {
     console.log('page', page);
     const res = await axios.get(`http://localhost:3000/api/notice/${page}`);
 
     router.push(`/notice/preview/${page}`);
-    setPage(page);
+    setPage(Number(getList.page));
     setDataSize(res.data.count);
     setNotice(res.data.data);
   };
-
-  useEffect(
-    (page) => {
-      handlePageChange(page);
-    },
-    [page],
-  );
 
   const a = notice.map((el, idx) => {
     const day = el.date.substr(0, 7);
@@ -95,7 +90,7 @@ const preview = ({ getList, sliceList }: any) => {
               3번
             </button>
             <Pagination
-              activePage={page}
+              activePage={Number(getList.page)}
               itemsCountPerPage={3} //한화면에 나오는 카운트
               totalItemsCount={dataSize} //총 갯수
               pageRangeDisplayed={Math.ceil(dataSize / 3)} //페이지 표시 갯수
