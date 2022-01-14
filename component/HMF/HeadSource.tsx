@@ -68,16 +68,16 @@ export const sidebarlist: dummys = [
   },
 ];
 
-export const style = {
-  display: 'flex',
-  width: '100%',
-  zIndex: 9999,
-  backgroundColor: 'transparent',
-  boxShadow: 0,
-  justifyContent: 'space-between',
-  paddingLeft: '12px',
-  paddingRight: '10px',
-};
+// export const style = {
+//   display: 'flex',
+//   width: '100%',
+//   zIndex: 9999,
+//   backgroundColor: 'transparent',
+//   boxShadow: 0,
+//   justifyContent: 'space-between',
+//   paddingLeft: '12px',
+//   paddingRight: '10px',
+// };
 
 export const HeaderStyle = makeStyles((theme) => ({
   root: {
@@ -220,11 +220,30 @@ export const Foot = makeStyles((theme) => ({
     backgroundColor: '#121212',
 
     justifyContent: 'center',
-    padding: '30px',
+
+    padding: '50px',
+
     fontSize: '50px',
 
     [theme.breakpoints.up('sm')]: {
       justifyContent: 'right',
+    },
+  },
+  logo: {
+    [theme.breakpoints.up('xs')]: {
+      justifyContent: 'right',
+      width: '80px',
+      display: 'block',
+    },
+    [theme.breakpoints.up('sm')]: {
+      justifyContent: 'right',
+      width: '80px',
+      display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: 'right',
+      width: '80px',
+      display: 'none',
     },
   },
 }));
@@ -257,12 +276,16 @@ export const Sns = makeStyles((theme) => ({
 
 export const Text = makeStyles((theme) => ({
   root: {
+    fontSize: '15px',
     textAlign: 'center',
-
+    marginBottom: '10px',
+    color: 'white',
     [theme.breakpoints.up('sm')]: {
       textAlign: 'right',
     },
-    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up('md')]: {
+      fontSize: '20px',
+    },
   },
 }));
 

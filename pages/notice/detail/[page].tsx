@@ -6,12 +6,10 @@ const DetailViewPage = ({ data }: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (datas) => {
-  console.log('param!!!!!!!', datas);
   const res = await axios.get(
     `http://localhost:3000/api/notice/detail/${datas.query.page}`,
   );
 
-  console.log('들어와라제발', res);
   const data = res.data;
 
   return { props: { data } };

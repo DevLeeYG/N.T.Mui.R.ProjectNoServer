@@ -5,10 +5,10 @@ import React, { useEffect, useState } from 'react';
 import AppLayout from '../../../component/AppLayout';
 import axios from 'axios';
 import { BigBox, MiddleBox, SmallBox } from '../noticeSource';
-import Pagination from 'react-js-pagination';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { GetServerSideProps } from 'next';
+import Paging from '../../../component/paginate/Pagination';
 
 const preview = ({ getList, sliceList }: any) => {
   console.log('getlist', getList.page);
@@ -40,14 +40,13 @@ const preview = ({ getList, sliceList }: any) => {
     setNotice(res.data.data);
   };
 
-  const a = notice.map((el, idx) => {
+  const a = notice?.map((el, idx) => {
     const day = el.date.substr(0, 7);
     const yearMonth = el.date.substr(8);
     const preview = el.post.substr(0, 70);
     return (
-      // eslint-disable-next-line react/jsx-key
-      <Link href={`/notice/detail/${el.id}`}>
-        <Box key={el.id} className={smallB.root}>
+      <Link key={el.id} href={`/notice/detail/${el.id}`}>
+        <Box className={smallB.root}>
           <Box className={smallB.YMD}>
             <Box className={smallB.Ym}>{yearMonth}</Box>
             <Box className={smallB.Day}>{day}</Box>
@@ -86,16 +85,14 @@ const preview = ({ getList, sliceList }: any) => {
               width: '100%',
             }}
           >
-            <button onClick={() => router.push('/notice/preview/3')}>
-              3번
-            </button>
-            <Pagination
+            <Paging
               activePage={Number(getList.page)}
               itemsCountPerPage={3} //한화면에 나오는 카운트
               totalItemsCount={dataSize} //총 갯수
               pageRangeDisplayed={Math.ceil(dataSize / 3)} //페이지 표시 갯수
               prevPageText={'‹'}
               nextPageText={'›'}
+              setPage={setPage}
               onChange={handlePageChange}
             />
           </Box>
@@ -112,18 +109,7 @@ export const getServerSideProps: GetServerSideProps = async (datas) => {
 
   const getList = res.data;
 
-  console.log('123123123', getList);
   return { props: { getList } };
 };
 
 export default preview;
-{
-  /* <Paging
-              page={page}
-              setPage={setPage}
-              setNotice={setNotice}
-              noticeApi={noticeApi}
-              getAlldata={notice}
-              dataSize={dataSize}
-            /> */
-}
