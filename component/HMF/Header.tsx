@@ -45,9 +45,9 @@ const Header = () => {
   const classes = HeaderStyle();
   const classesI = Headerimg();
 
-  const menu = dummy.map((el) => {
-    return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
-  });
+  // const menu = dummy.map((el) => {
+  //   return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
+  // });
 
   return (
     <Box

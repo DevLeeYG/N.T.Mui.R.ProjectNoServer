@@ -68,16 +68,16 @@ export const sidebarlist: dummys = [
   },
 ];
 
-export const style = {
-  display: 'flex',
-  width: '100%',
-  zIndex: 9999,
-  backgroundColor: 'transparent',
-  boxShadow: 0,
-  justifyContent: 'space-between',
-  paddingLeft: '12px',
-  paddingRight: '10px',
-};
+// export const style = {
+//   display: 'flex',
+//   width: '100%',
+//   zIndex: 9999,
+//   backgroundColor: 'transparent',
+//   boxShadow: 0,
+//   justifyContent: 'space-between',
+//   paddingLeft: '12px',
+//   paddingRight: '10px',
+// };
 
 export const HeaderStyle = makeStyles((theme) => ({
   root: {
@@ -227,6 +227,9 @@ export const Foot = makeStyles((theme) => ({
       justifyContent: 'right',
     },
   },
+  logo: {
+    width: '80px',
+  },
 }));
 
 export const Footsns = makeStyles((theme) => ({
@@ -250,7 +253,7 @@ export const Sns = makeStyles((theme) => ({
       width: '50px',
     },
     [theme.breakpoints.up('md')]: {
-      width: '30px',
+      width: '20px',
     },
   },
 }));

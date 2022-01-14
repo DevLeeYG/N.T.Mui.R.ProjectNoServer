@@ -63,3 +63,26 @@ ul.pagination li a.active {
   height: 30px;
   color: #337ab7;
 }
+@media (min-width: 576px) {
+  .custom_class {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom_class {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .custom_class {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom_class {
+    max-width: 1140px;
+  }
+}
