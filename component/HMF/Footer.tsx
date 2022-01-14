@@ -1,18 +1,20 @@
 import { Box, CardMedia, Typography } from '@mui/material';
 import React from 'react';
-
+import { useRouter } from 'next/router';
 import { Foot, Footsns, Sns, Text } from './HeadSource';
 const Footer = () => {
   const classes = Foot();
   const classesn = Footsns();
   const sns = Sns();
   const text = Text();
-  const href = window.location.href;
+  // const href = window.location.href;
+  const router = useRouter();
+  const asPath = router.asPath;
 
   return (
     <Box className={classes.root}>
       <Box>
-        {/* {href === 'http://localhost:3000/aboutEdam' ? (
+        {asPath === '/aboutEdam' ? (
           <Box
             sx={{
               width: '100%',
@@ -28,7 +30,7 @@ const Footer = () => {
               src="/img/logo.png"
             />
           </Box>
-        ) : null} */}
+        ) : null}
 
         <Box className={classesn.root}>
           <CardMedia
@@ -49,21 +51,10 @@ const Footer = () => {
           />
         </Box>
         <Box>
-          <Typography
-            className={text.root}
-            sx={{ marginBottom: '10px' }}
-            color="white"
-          >
-            Covered By DeveLeeYG
-          </Typography>
+          <Typography className={text.root}>Covered By DeveLeeYG</Typography>
         </Box>
-        <Box
-          className={text.root}
-          sx={{ fontSize: '5px' }}
-          textAlign="center"
-          color="white"
-        >
-          &copy; 2022.01.01 DevLeeYG.All rights reserved.
+        <Box className={text.root}>
+          &copy; 2022.01.01 DevLeeYG.All rights reserved
         </Box>
       </Box>
     </Box>

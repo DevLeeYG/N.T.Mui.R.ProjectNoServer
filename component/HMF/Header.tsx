@@ -51,22 +51,22 @@ const Header = () => {
 
   return (
     <Box
-      sx={{
-        flexGrow: 1,
-        position: 'fixed',
-        color: 'white',
-        zIndex: 5,
-      }}
+    // sx={{
+    //   flexGrow: 1,
+    //   position: 'fixed',
+    //   color: 'white',
+    //   zIndex: 5,
+    // }}
     >
       <AppBar sx={{ boxShadow: 0 }} className={classes.root}>
         <Toolbar
-          sx={{
-            width: '100%',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            minHeight: '64px',
-            margin: 0,
-          }}
+        // sx={{
+        //   width: '100%',
+        //   paddingLeft: '24px',
+        //   paddingRight: '24px',
+        //   minHeight: '64px',
+        //   margin: 0,
+        // }}
         >
           <CardMedia
             onClick={() => router.push('/')}

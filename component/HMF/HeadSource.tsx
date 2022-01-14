@@ -220,7 +220,9 @@ export const Foot = makeStyles((theme) => ({
     backgroundColor: '#121212',
 
     justifyContent: 'center',
-    padding: '30px',
+
+    padding: '50px',
+
     fontSize: '50px',
 
     [theme.breakpoints.up('sm')]: {
@@ -228,7 +230,21 @@ export const Foot = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '80px',
+    [theme.breakpoints.up('xs')]: {
+      justifyContent: 'right',
+      width: '80px',
+      display: 'block',
+    },
+    [theme.breakpoints.up('sm')]: {
+      justifyContent: 'right',
+      width: '80px',
+      display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: 'right',
+      width: '80px',
+      display: 'none',
+    },
   },
 }));
 
@@ -253,19 +269,23 @@ export const Sns = makeStyles((theme) => ({
       width: '50px',
     },
     [theme.breakpoints.up('md')]: {
-      width: '20px',
+      width: '30px',
     },
   },
 }));
 
 export const Text = makeStyles((theme) => ({
   root: {
+    fontSize: '15px',
     textAlign: 'center',
-
+    marginBottom: '10px',
+    color: 'white',
     [theme.breakpoints.up('sm')]: {
       textAlign: 'right',
     },
-    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up('md')]: {
+      fontSize: '20px',
+    },
   },
 }));
 

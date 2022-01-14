@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -17,6 +17,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { useMediaQuery } from '@material-ui/core';
 import { Typography, CardMedia } from '@mui/material';
 import { sidebarlist } from '../HMF/HeadSource';
+import { useRouter } from 'next/router';
 const drawerWidth = '100%';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -37,6 +38,7 @@ const listdummy = sidebarlist.map((text, i) => {
         paddingBottom: 2,
         fontWeight: 600,
         fontSize: 20,
+
         cursor: 'pointer',
       }}
       variant="inherit"
@@ -51,6 +53,7 @@ const Sidebar = () => {
   const isXs = useMediaQuery('(max-width:1000px)');
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -59,16 +62,28 @@ const Sidebar = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const iconStyle = {
+    marginLeft: 2,
+    color: 'white',
+    ...(open && { display: 'none' }),
+  };
+  const wb = () => {
+    if (router.asPath !== '/') {
+      iconStyle.color = 'black';
+    }
+    console.log(router.asPath);
+  };
+
+  wb();
 
   return (
     <Box sx={{ display: 'flex' }}>
       {isXs ? (
         <IconButton
-          color="inherit"
           aria-label="open drawer"
           onClick={handleDrawerOpen}
           edge="start"
-          sx={{ marginLeft: 2, ...(open && { display: 'none' }) }}
+          sx={iconStyle}
         >
           <MenuIcon fontSize="large" />
         </IconButton>
