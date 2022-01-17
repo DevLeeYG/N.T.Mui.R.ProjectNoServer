@@ -12,9 +12,9 @@ import {
 import Link from 'next/link';
 
 const style = {
-  fontSize: 15,
-  marginLeft: 3,
-  marginRight: 3,
+  fontSize: 12,
+  marginLeft: 2.5,
+  marginRight: 2.5,
   fontWeight: 800,
 };
 
@@ -34,7 +34,9 @@ const Headlink = ({ setMouseHover }: any) => {
           <Link href="/notice/preview/1">
             <Typography sx={style}>NOTICE</Typography>
           </Link>
-
+          <Link href="/artists">
+            <Typography sx={style}>ARTISTS</Typography>
+          </Link>
           <Typography sx={style}>madeEDAM</Typography>
           <Typography sx={style}>AUDITION</Typography>
           <Typography sx={style}>CONTACT US</Typography>

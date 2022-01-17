@@ -59,15 +59,7 @@ const Header = () => {
     // }}
     >
       <AppBar sx={{ boxShadow: 0 }} className={classes.root}>
-        <Toolbar
-        // sx={{
-        //   width: '100%',
-        //   paddingLeft: '24px',
-        //   paddingRight: '24px',
-        //   minHeight: '64px',
-        //   margin: 0,
-        // }}
-        >
+        <Toolbar>
           <CardMedia
             onClick={() => router.push('/')}
             className={classesI.root}
