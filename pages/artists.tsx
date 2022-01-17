@@ -7,8 +7,10 @@ const artists = () => {
   return (
     <AppLayout>
       <div className={classes.root}>
-        <div className={classes.title}>
-          <h1>Artists</h1>
+        <div className={classes.titleContainer}>
+          <div className={classes.title}>
+            <h1>Artists</h1>
+          </div>
         </div>
 
         <div className={classes.artistContainer}>
@@ -19,6 +21,7 @@ const artists = () => {
               alt="iu"
               src="/img/iu.jpg"
             />
+
             <CardMedia
               className={classes.artist}
               component="img"

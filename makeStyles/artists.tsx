@@ -4,7 +4,8 @@ import { keyframes } from '@mui/system';
 export const container = makeStyles((theme) => ({
   root: {
     fontFamily: 'serif',
-
+    marginLeft: 'auto',
+    marginRigth: 'auto',
     overflow: 'hidden',
     textAlign: 'center',
 
@@ -15,11 +16,15 @@ export const container = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       paddingTop: 0,
       paddingBottom: 0,
-      '& h1': {
-        position: 'absolute',
-        top: '50%',
-        margin: 0,
-      },
+    },
+  },
+  titleContainer: {
+    width: '100%',
+
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    [theme.breakpoints.up('md')]: {
+      backgroundColor: '#F5F5F5',
     },
   },
 
@@ -30,38 +35,38 @@ export const container = makeStyles((theme) => ({
       fontSize: '15px',
     },
     [theme.breakpoints.up('md')]: {
-      backgroundColor: '#F5F5F5',
       width: '100%',
-      fontSize: '23px',
-      height: '500px',
+      fontSize: '25px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      height: '400px',
+      '& h1': {
+        position: 'absolute',
+        top: '50%',
+        margin: '0px',
+      },
     },
   },
-  titleContainer: {
-    paddingLeft: '10%',
-    paddingRight: '10%',
-    width: '100%',
-  },
+
+  artistContainer: {},
 
   artists: {
     display: 'flex',
     width: '100%',
+    marginRight: 'auto',
+    marginLeft: 'auto',
     [theme.breakpoints.up('xs')]: {
       marginTop: '35px',
     },
     [theme.breakpoints.up('md')]: {
-      width: '60%',
       marginTop: '-80px',
       paddingBottom: '100px',
     },
 
     [theme.breakpoints.up('lg')]: {
+      width: '1350px',
       marginTop: '-80px',
     },
-  },
-
-  artistContainer: {
-    display: 'table',
-    width: '100%',
   },
 
   artist: {
