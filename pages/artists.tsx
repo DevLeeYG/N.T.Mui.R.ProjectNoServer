@@ -6,29 +6,29 @@ const artists = () => {
   const classes = container();
   return (
     <AppLayout>
-      <div className={classes.root}>
-        <div className={classes.titleContainer}>
-          <div className={classes.title}>
-            <h1>Artists</h1>
-          </div>
+      <div className="Container">
+        <div className={classes.artistContainer}>
+          <div className={classes.titleContainer}>
+            <div className={classes.title}>
+              <h1>Artists</h1>
+            </div>
+          </div>{' '}
         </div>
 
-        <div className={classes.artistContainer}>
-          <div className={classes.artists}>
-            <CardMedia
-              className={classes.artist}
-              component="img"
-              alt="iu"
-              src="/img/iu.jpg"
-            />
+        <div className={classes.artists}>
+          <CardMedia
+            className={classes.artist}
+            component="img"
+            alt="iu"
+            src="/img/iu.jpg"
+          />
 
-            <CardMedia
-              className={classes.artist}
-              component="img"
-              alt="sg"
-              src="/img/shinsg.jpg"
-            />
-          </div>
+          <CardMedia
+            className={classes.artist}
+            component="img"
+            alt="sg"
+            src="/img/shinsg.jpg"
+          />
         </div>
       </div>
     </AppLayout>
