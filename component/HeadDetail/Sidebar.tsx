@@ -2,22 +2,16 @@ import React, { useEffect } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { useMediaQuery } from '@material-ui/core';
 import { Typography, CardMedia } from '@mui/material';
 import { sidebarlist } from '../HMF/HeadSource';
 import { useRouter } from 'next/router';
+
 const drawerWidth = '100%';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -30,26 +24,27 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-const listdummy = sidebarlist.map((text, i) => {
-  return (
-    <Typography
-      sx={{
-        paddingLeft: 5,
-        paddingBottom: 2,
-        fontWeight: 600,
-        fontSize: 20,
-
-        cursor: 'pointer',
-      }}
-      variant="inherit"
-      key={text.id}
-    >
-      {text.text}
-    </Typography>
-  );
-});
-
 const Sidebar = () => {
+  const listdummy = sidebarlist.map((text, i) => {
+    return (
+      <Typography
+        onClick={() => router.push(text.path)}
+        sx={{
+          paddingLeft: 5,
+          paddingBottom: 2,
+          fontWeight: 600,
+          fontSize: 20,
+
+          cursor: 'pointer',
+        }}
+        variant="inherit"
+        key={text.id}
+      >
+        {text.text}
+      </Typography>
+    );
+  });
+
   const isXs = useMediaQuery('(max-width:1000px)');
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -63,7 +58,7 @@ const Sidebar = () => {
     setOpen(false);
   };
   const iconStyle = {
-    marginLeft: 2,
+    marginLeft: 0.5,
     color: 'white',
     ...(open && { display: 'none' }),
   };

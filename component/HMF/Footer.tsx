@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <Box className={classes.root}>
       <Box>
-        {asPath === '/aboutEdam' ? (
+        {asPath !== '/' ? (
           <Box
             sx={{
               width: '100%',

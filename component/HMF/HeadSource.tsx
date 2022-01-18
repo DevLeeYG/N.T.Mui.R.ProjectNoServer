@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import transitions from '@material-ui/core/styles/transitions';
-type dummys = { id: number; text: string }[];
+type dummys = { id: number; text: string; path: string }[];
 const BtoU = keyframes`
   from {
     opacity: 0;
@@ -18,26 +18,32 @@ export const dummy: dummys = [
   {
     id: 0,
     text: 'EDAM',
+    path: '/',
   },
   {
     id: 1,
     text: 'NOTICE',
+    path: '/notice/preview',
   },
   {
     id: 2,
     text: 'ARTISTS',
+    path: '/artists',
   },
   {
     id: 3,
     text: 'madeEDAM',
+    path: '/madeEdam',
   },
   {
     id: 4,
     text: 'AUDITION',
+    path: '/audition',
   },
   {
     id: 5,
     text: 'CONTACT US',
+    path: '/contact',
   },
 ];
 
@@ -45,26 +51,32 @@ export const sidebarlist: dummys = [
   {
     id: 0,
     text: 'EDAM',
+    path: '/',
   },
   {
     id: 1,
     text: 'NOTICE',
+    path: '/notice',
   },
   {
     id: 2,
     text: 'ARTISTS',
+    path: '/artists',
   },
   {
     id: 3,
     text: 'madeEDAM',
+    path: '/madeEdam',
   },
   {
     id: 4,
     text: 'AUDITION',
+    path: 'audition',
   },
   {
     id: 5,
     text: 'CONTACT US',
+    path: 'contact',
   },
 ];
 
@@ -87,6 +99,7 @@ export const HeaderStyle = makeStyles((theme) => ({
     minHeight: '64px',
 
     [theme.breakpoints.up('sm')]: { padding: '30px 0px 30px 30px' },
+    [theme.breakpoints.up('md')]: { margin: 0 },
   },
 }));
 
