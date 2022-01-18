@@ -1,9 +1,12 @@
-import { CardMedia } from '@mui/material';
-import React from 'react';
+import { Box, CardContent, CardMedia } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import React, { useState } from 'react';
 import AppLayout from '../component/AppLayout';
 import { container } from '../makeStyles/artists';
 const artists = () => {
   const classes = container();
+  const [hover, setHover] = useState(false);
+  const [sgHover, setSgHover] = useState(false);
   return (
     <AppLayout>
       <div className="Container">
@@ -16,19 +19,33 @@ const artists = () => {
         </div>
 
         <div className={classes.artists}>
-          <CardMedia
-            className={classes.artist}
-            component="img"
-            alt="iu"
-            src="/img/iu.jpg"
-          />
+          <Box
+            onMouseEnter={() => setHover(!hover)}
+            onMouseLeave={() => setHover(false)}
+            className={classes.containerBox}
+          >
+            {hover && <Box className={classes.innerBox}>아이유(iu)</Box>}
 
-          <CardMedia
-            className={classes.artist}
-            component="img"
-            alt="sg"
-            src="/img/shinsg.jpg"
-          />
+            <CardMedia
+              className={classes.artist}
+              component="img"
+              alt="sg"
+              src="/img/iu.jpg"
+            />
+          </Box>
+          <Box
+            onMouseEnter={() => setSgHover(!sgHover)}
+            onMouseLeave={() => setSgHover(false)}
+            className={classes.containerBox}
+          >
+            {sgHover && <Box className={classes.innerBox}>신세경</Box>}
+            <CardMedia
+              className={classes.artist}
+              component="img"
+              alt="sg"
+              src="/img/shinsg.jpg"
+            />
+          </Box>
         </div>
       </div>
     </AppLayout>

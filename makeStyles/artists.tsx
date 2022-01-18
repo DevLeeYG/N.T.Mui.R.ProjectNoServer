@@ -29,6 +29,7 @@ export const container = makeStyles((theme) => ({
       justifyContent: 'center',
     },
     [theme.breakpoints.up('md')]: {
+      width: '1000px',
       marginTop: '-80px',
       paddingBottom: '100px',
       justifyContent: 'left',
@@ -49,7 +50,7 @@ export const container = makeStyles((theme) => ({
       fontSize: '15px',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '25px',
+      fontSize: '20px',
 
       height: '400px',
       '& h1': {
@@ -59,6 +60,9 @@ export const container = makeStyles((theme) => ({
 
         margin: '0px',
       },
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '25px',
     },
   },
 
@@ -70,14 +74,16 @@ export const container = makeStyles((theme) => ({
 
   artists: {
     display: 'flex',
-    width: '100%',
+
     marginRight: 'auto',
     marginLeft: 'auto',
     [theme.breakpoints.up('xs')]: {
+      width: '100%',
       marginTop: '35px',
       paddingBottom: '100px',
     },
     [theme.breakpoints.up('md')]: {
+      width: '1000px',
       marginTop: '-80px',
       paddingBottom: '100px',
     },
@@ -88,19 +94,39 @@ export const container = makeStyles((theme) => ({
     },
   },
 
+  containerBox: {
+    color: 'white',
+    position: 'relative',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+
+    '&:hover': {
+      filter: 'brightness(0.30)',
+
+      zIndex: 0,
+    },
+  },
+
+  innerBox: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+    color: 'white',
+    zIndex: 2,
+    textShadow: '-2px -1px 8px rgba(255, 255, 255, 1)',
+  },
+
   artist: {
-    [theme.breakpoints.up('xs')]: {
-      padding: 10,
-      width: '50%',
-      marginBottom: '10px',
+    display: 'flex',
+    height: '100%',
+    marginBottom: '10px',
+
+    [theme.breakpoints.up('lg')]: {
+      width: '350px',
     },
-    [theme.breakpoints.up(768)]: {
-      display: 'table-cell',
-      padding: 10,
-      width: '250px',
-      marginBottom: '10px',
-    },
-    [theme.breakpoints.up(900)]: {
+
+    [theme.breakpoints.up('lg')]: {
       width: '350px',
     },
   },
