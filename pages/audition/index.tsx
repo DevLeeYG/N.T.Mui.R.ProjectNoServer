@@ -12,7 +12,7 @@ const index = () => {
     <AppLayout>
       <Container className={classes.container}>
         <Box className={classes.mainBox}>
-          <Container className={classes.introBox}>
+          <Box className={classes.introBox}>
             <h1>
               EDAM Entertaiment <br /> AUDITION
             </h1>
@@ -25,7 +25,7 @@ const index = () => {
                 많은 참여 바랍니다.
               </p>
             </Box>
-          </Container>
+          </Box>
           {/* //////////////////////////////////////////// */}
           <Tab />
           <Index />

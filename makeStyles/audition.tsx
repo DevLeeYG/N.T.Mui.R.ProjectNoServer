@@ -17,8 +17,6 @@ export const audition = makeStyles((theme) => ({
     },
   },
   introBox: {
-    paddingLeft: '0px',
-    paddingRight: '0px',
     [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
       fontFamily: 'serif',
@@ -36,6 +34,44 @@ export const audition = makeStyles((theme) => ({
         fontSize: '14px',
         fontWeight: 350,
         lineHeight: '22px',
+      },
+    },
+  },
+
+  dash: {
+    paddingLeft: '15px',
+    '& p::before': {
+      content: "'-' ",
+    },
+  },
+
+  infobox: {
+    width: '100%',
+    height: '100%',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '18px',
+      fontWeight: 700,
+      '& dl': {
+        marginTop: '0px',
+      },
+      '& span': {
+        marginBottom: 30,
+        fontSize: '17px',
+        fontWeight: 800,
+      },
+      marginBottom: '15px',
+      '& dt': {
+        lineHeight: '35.4px',
+        fontSize: '15px',
+        fontWeight: 700,
+      },
+      '& p': {
+        fontFamily: 'Noto Sans KR',
+        marginTop: '0px',
+        marginBottom: '0px',
+        lineHeight: '22.4px',
+        fontSize: '14px',
+        fontWeight: 300,
       },
     },
   },
