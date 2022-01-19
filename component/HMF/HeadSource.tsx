@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import transitions from '@material-ui/core/styles/transitions';
+
 type dummys = { id: number; text: string; path: string }[];
 const BtoU = keyframes`
   from {
