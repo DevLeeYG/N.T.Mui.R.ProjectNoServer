@@ -2,6 +2,11 @@ import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
 
 export const container = makeStyles((theme) => ({
+  '@keyframes EdamFont': {
+    from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
+    to: { opacity: 1, transform: 'translateZ(0)' },
+  },
+
   root: {
     fontFamily: 'serif',
     marginLeft: 'auto',
@@ -130,7 +135,7 @@ export const container = makeStyles((theme) => ({
 
   artist: {
     display: 'flex',
-
+    animation: `$EdamFont 0.8s`,
     height: '100%',
     marginBottom: '10px',
 
