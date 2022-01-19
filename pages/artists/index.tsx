@@ -1,8 +1,8 @@
 import { Box, CardContent, CardMedia } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
-import AppLayout from '../component/AppLayout';
-import { container } from '../makeStyles/artists';
+import AppLayout from '../../component/AppLayout';
+import { container } from '../../makeStyles/artists';
 const artists = () => {
   const classes = container();
   const [hover, setHover] = useState(false);
