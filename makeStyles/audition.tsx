@@ -20,7 +20,7 @@ export const audition = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
       fontFamily: 'serif',
-
+      marginBottom: '50px',
       marginTop: 0,
       '& h1': {
         fontSize: '22px',
@@ -39,18 +39,27 @@ export const audition = makeStyles((theme) => ({
   },
 
   dash: {
+    position: 'relative',
     paddingLeft: '15px',
     '& p::before': {
+      position: 'absolute',
       content: "'-' ",
+      top: 0,
+      left: 0,
     },
   },
-
+  bold: {
+    '& p': {
+      fontWeight: 'bold',
+    },
+  },
   infobox: {
     width: '100%',
     height: '100%',
     [theme.breakpoints.up('xs')]: {
       fontSize: '18px',
       fontWeight: 700,
+
       '& dl': {
         marginTop: '0px',
       },
@@ -71,7 +80,7 @@ export const audition = makeStyles((theme) => ({
         marginBottom: '0px',
         lineHeight: '22.4px',
         fontSize: '14px',
-        fontWeight: 300,
+        fontWeight: 'lighter',
       },
     },
   },
@@ -82,5 +91,20 @@ export const auditionInfo = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       padding: 0,
     },
+  },
+}));
+
+export const auditionTab = makeStyles((theme) => ({
+  MuiTab: {
+    display: 'flex',
+
+    justifyContent: 'center',
+    width: '100%',
+    [theme.breakpoints.up('xs')]: {
+      marginBottom: '40px',
+    },
+  },
+  detail: {
+    width: '184px',
   },
 }));
