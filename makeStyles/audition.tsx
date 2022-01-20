@@ -17,6 +17,7 @@ export const audition = makeStyles((theme) => ({
     },
   },
   introBox: {
+    wordBreak: 'keep-all',
     [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
       fontFamily: 'serif',
@@ -41,9 +42,21 @@ export const audition = makeStyles((theme) => ({
   dash: {
     position: 'relative',
     paddingLeft: '15px',
+
     '& p::before': {
       position: 'absolute',
       content: "'-' ",
+      top: 0,
+      left: 0,
+    },
+  },
+  star: {
+    position: 'relative',
+    paddingLeft: '15px',
+    fontWeight: 300,
+    '& p::before': {
+      position: 'absolute',
+      content: "'*' ",
       top: 0,
       left: 0,
     },
@@ -54,6 +67,41 @@ export const audition = makeStyles((theme) => ({
     },
   },
   infobox: {
+    wordBreak: 'keep-all',
+    width: '100%',
+    height: '100%',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '18px',
+      fontWeight: 700,
+
+      '& dl': {
+        marginTop: '0px',
+      },
+      '& span': {
+        marginBottom: 30,
+        fontSize: '17px',
+        fontWeight: 800,
+      },
+      marginBottom: '40px',
+      '& dt': {
+        lineHeight: '35.4px',
+        fontSize: '15px',
+        fontWeight: 700,
+      },
+      '& p': {
+        fontFamily: 'Noto Sans KR',
+        marginTop: '0px',
+        marginBottom: '0px',
+        lineHeight: '22.4px',
+        fontSize: '14px',
+        fontWeight: 'lighter',
+      },
+    },
+  },
+  noticeBox: {
+    paddingTop: '50px',
+    borderTop: '1px solid #dadada',
+    wordBreak: 'keep-all',
     width: '100%',
     height: '100%',
     [theme.breakpoints.up('xs')]: {
@@ -198,7 +246,7 @@ export const process = makeStyles((theme) => ({
 
   notice: {
     paddingLeft: '30px',
-    wordBreak: 'keep-all',
+
     position: 'relative',
     '& p': {
       fontSize: '14px',

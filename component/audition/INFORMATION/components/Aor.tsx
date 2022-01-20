@@ -96,7 +96,7 @@ const Aor = () => {
             <Box className={classes.notice}>
               <Typography component="p">
                 정면 클로즈업 이미지/상반신 정면, 좌, 우 이미지/전신 이미지 (총
-                5장)
+                5장) *JPG/GIF/PNG 형식
               </Typography>
             </Box>
             <Box className={classes.notice}>

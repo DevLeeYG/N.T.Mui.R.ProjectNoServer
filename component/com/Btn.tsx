@@ -5,7 +5,7 @@ const Buttons = () => {
   const classes = btn();
   return (
     <div>
-      <Button className={classes.root} fullWidth>
+      <Button disableRipple className={classes.root} fullWidth>
         지원서 다운로드
       </Button>
     </div>
