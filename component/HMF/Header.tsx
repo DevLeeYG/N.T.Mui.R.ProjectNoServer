@@ -50,14 +50,7 @@ const Header = () => {
   // });
 
   return (
-    <Box
-    // sx={{
-    //   flexGrow: 1,
-    //   position: 'fixed',
-    //   color: 'white',
-    //   zIndex: 5,
-    // }}
-    >
+    <Box>
       <AppBar sx={{ boxShadow: 0 }} className={classes.root}>
         <Toolbar>
           <CardMedia

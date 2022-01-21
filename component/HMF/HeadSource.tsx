@@ -79,17 +79,6 @@ export const sidebarlist: dummys = [
   },
 ];
 
-// export const style = {
-//   display: 'flex',
-//   width: '100%',
-//   zIndex: 9999,
-//   backgroundColor: 'transparent',
-//   boxShadow: 0,
-//   justifyContent: 'space-between',
-//   paddingLeft: '12px',
-//   paddingRight: '10px',
-// };
-
 export const HeaderStyle = makeStyles((theme) => ({
   root: {
     backgroundColor: 'transparent',
