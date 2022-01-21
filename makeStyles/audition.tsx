@@ -174,7 +174,7 @@ export const process = makeStyles((theme) => ({
     },
   },
   processingBox: {
-    display: 'flex',
+    position: 'relative',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -183,8 +183,31 @@ export const process = makeStyles((theme) => ({
     borderRadius: '2px',
     backgroundColor: '#F3F3F3',
     padding: '10px 15px 10px 15px',
-  },
 
+    zIndex: 1,
+    [theme.breakpoints.up(768)]: {
+      display: 'flex',
+    },
+    [theme.breakpoints.up(993)]: {
+      display: 'flex',
+    },
+  },
+  line: {
+    display: 'none',
+    border: '1px solid #DADADA',
+    width: '80%',
+    height: '0.5px',
+    backgroundColor: 'black',
+    position: 'absolute',
+    top: '47%',
+    left: '10%',
+    [theme.breakpoints.up(768)]: {
+      display: 'block',
+    },
+    [theme.breakpoints.up(993)]: {
+      display: 'block',
+    },
+  },
   circle: {
     borderRadius: '50%',
     textAlign: 'center',
@@ -192,7 +215,11 @@ export const process = makeStyles((theme) => ({
     width: '110px',
     height: '110px',
     [theme.breakpoints.up('xs')]: {
-      margin: 'auto auto 40px auto',
+      margin: '40px auto 50px auto',
+    },
+    [theme.breakpoints.up(993)]: {
+      width: '125px',
+      height: '125px',
     },
   },
 
@@ -205,7 +232,22 @@ export const process = makeStyles((theme) => ({
     height: '30px',
 
     [theme.breakpoints.up('xs')]: {
-      margin: 'auto auto auto auto',
+      margin: 'auto',
+      marginTop: '30px',
+      width: '90px',
+      height: '45px',
+    },
+    [theme.breakpoints.up(768)]: {
+      margin: 'auto',
+      marginTop: '30px',
+      marginLeft: '50px',
+      marginRight: '50px',
+      width: '90px',
+      height: '45px',
+    },
+    [theme.breakpoints.up(993)]: {
+      marginLeft: '100px',
+      marginRight: '100px',
     },
   },
 
@@ -217,12 +259,16 @@ export const process = makeStyles((theme) => ({
     textAlign: 'center',
     paddingTop: '0px',
     width: '100%',
+    [theme.breakpoints.up(993)]: {
+      fontSize: '16px',
+    },
   },
   circleText2: {
     lineHeight: '40px',
     textAlign: 'center',
     paddingTop: '0px',
     width: '100%',
+    marginBottom: '4px',
   },
 
   singer: {

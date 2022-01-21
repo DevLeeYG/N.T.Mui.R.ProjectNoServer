@@ -2,8 +2,9 @@
 import React from 'react';
 import { Box, Typography, List, ListItem } from '@mui/material';
 import { process } from '../../../../makeStyles/audition';
-
+import useMediaQuery from '@mui/material/useMediaQuery';
 const Process = () => {
+  // const matches = useMediaQuery('(max-width:768)');
   const classes = process();
 
   return (
@@ -11,8 +12,10 @@ const Process = () => {
       <Typography className={classes.process} component="p">
         오디션 절차
       </Typography>
-      <Box className={classes.processingBox}>
-        <List>
+
+      <Box>
+        <List className={classes.processingBox}>
+          <div className={classes.line}></div>
           <ListItem className={classes.circle}>
             <Typography
               className={classes.circleText}
@@ -41,7 +44,7 @@ const Process = () => {
               지원 자료 심사
             </Typography>
           </Box>
-          <Box className={classes.textBox}>
+          <Box>
             <ListItem className={classes.wideCircle}>
               <Typography
                 className={classes.circleText}
