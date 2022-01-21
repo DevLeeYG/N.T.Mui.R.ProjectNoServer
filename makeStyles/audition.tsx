@@ -8,6 +8,18 @@ export const audition = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       paddingTop: '140px',
     },
+    [theme.breakpoints.up(768)]: {
+      paddingTop: '180px',
+      width: '786px',
+    },
+    [theme.breakpoints.up(992)]: {
+      paddingTop: '180px',
+      width: '970px',
+    },
+    [theme.breakpoints.up(1200)]: {
+      paddingTop: '180px',
+      width: '1180px',
+    },
   },
   mainBox: {
     [theme.breakpoints.up('xs')]: {
@@ -37,8 +49,60 @@ export const audition = makeStyles((theme) => ({
         lineHeight: '22px',
       },
     },
+    [theme.breakpoints.up(768)]: {
+      '& h1': {
+        fontSize: '30px',
+        marginTop: 0,
+        marginBottom: '40px',
+      },
+      '& p': {
+        margin: 0,
+        color: '#757575',
+        fontFamily: 'nato sans KR',
+        fontSize: '14px',
+        fontWeight: 350,
+        lineHeight: '28px',
+        wordBreak: 'keep-all',
+      },
+    },
+    [theme.breakpoints.up(993)]: {
+      '& h1': {
+        fontSize: '40px',
+        marginTop: 0,
+        marginBottom: '40px',
+      },
+      '& p': {
+        margin: 0,
+        color: '#757575',
+        fontFamily: 'nato sans KR',
+        fontSize: '16px',
+        fontWeight: 350,
+        lineHeight: '28px',
+        wordBreak: 'keep-all',
+      },
+    },
+    [theme.breakpoints.up(1200)]: {
+      '& h1': {
+        fontSize: '50px',
+        marginTop: 0,
+        marginBottom: '40px',
+      },
+      '& p': {
+        margin: 0,
+        color: '#757575',
+        fontFamily: 'nato sans KR',
+        fontSize: '17px',
+        fontWeight: 350,
+        lineHeight: '28px',
+        wordBreak: 'keep-all',
+      },
+    },
   },
-
+  blockbr: {
+    [theme.breakpoints.up(768)]: {
+      display: 'none',
+    },
+  },
   dash: {
     position: 'relative',
     paddingLeft: '15px',
@@ -89,15 +153,42 @@ export const audition = makeStyles((theme) => ({
         fontWeight: 700,
       },
       '& p': {
-        fontFamily: 'Noto Sans KR',
         marginTop: '0px',
         marginBottom: '0px',
-        lineHeight: '22.4px',
-        fontSize: '14px',
+
+        fontSize: '15px',
         fontWeight: 'lighter',
       },
     },
+    [theme.breakpoints.up(993)]: {
+      fontSize: '21px',
+    },
+    '& dt': {
+      fontSize: '16px',
+    },
+    '& p': {
+      fontSize: '16px',
+    },
   },
+  textflex: {
+    [theme.breakpoints.up(768)]: {
+      display: 'flex',
+      alignItems: 'center',
+      '& dt ': {
+        width: '80px',
+      },
+    },
+  },
+  HowToApply: {
+    display: 'flex',
+    [theme.breakpoints.up(768)]: {
+      display: 'flex',
+      width: '80px',
+      height: '117px',
+      verticalAlign: 'top',
+    },
+  },
+
   noticeBox: {
     paddingTop: '50px',
     borderTop: '1px solid #dadada',
@@ -139,6 +230,12 @@ export const auditionInfo = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       padding: 0,
     },
+    [theme.breakpoints.up(768)]: {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+
+      padding: '15px',
+    },
   },
 }));
 
@@ -154,6 +251,9 @@ export const auditionTab = makeStyles((theme) => ({
   },
   detail: {
     width: '184px',
+    [theme.breakpoints.up(993)]: {
+      fontSize: '20px',
+    },
   },
 }));
 
@@ -162,6 +262,7 @@ export const process = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       marginBottom: '20px',
     },
+    [theme.breakpoints.up(993)]: {},
   },
   part: {
     marginBottom: '15px',
@@ -263,6 +364,9 @@ export const process = makeStyles((theme) => ({
       fontSize: '16px',
     },
   },
+  resumes: {
+    display: 'flex',
+  },
   circleText2: {
     lineHeight: '40px',
     textAlign: 'center',
@@ -270,7 +374,12 @@ export const process = makeStyles((theme) => ({
     width: '100%',
     marginBottom: '4px',
   },
-
+  aor: {
+    [theme.breakpoints.up(993)]: {
+      display: 'flex',
+      width: '100%',
+    },
+  },
   singer: {
     width: '100%',
     height: 'auto',
@@ -278,8 +387,20 @@ export const process = makeStyles((theme) => ({
     borderRadius: '2px',
     backgroundColor: '#F3F3F3',
     padding: '30px 10px 30px 10px',
+    [theme.breakpoints.up(993)]: { width: '90%' },
   },
-
+  actor: {
+    width: '100%',
+    height: 'auto',
+    color: '#333',
+    borderRadius: '2px',
+    backgroundColor: '#F3F3F3',
+    padding: '30px 10px 30px 10px',
+    [theme.breakpoints.up(993)]: { width: '90%' },
+  },
+  singActorFlex: {
+    display: 'flex',
+  },
   singerActorTitle: {
     [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
