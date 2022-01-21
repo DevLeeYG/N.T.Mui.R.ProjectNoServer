@@ -4,7 +4,7 @@ import { btn } from '../../makeStyles/Buttoncss';
 const Buttons = () => {
   const classes = btn();
   return (
-    <div>
+    <div className={classes.container}>
       <Button disableRipple className={classes.root} fullWidth>
         지원서 다운로드
       </Button>

@@ -3,6 +3,7 @@ import { keyframes } from '@mui/system';
 
 export const audition = makeStyles((theme) => ({
   container: {
+    background: 'white',
     paddingLeft: '15px',
     paddingRight: '15px',
     [theme.breakpoints.up('xs')]: {
@@ -14,7 +15,7 @@ export const audition = makeStyles((theme) => ({
     },
     [theme.breakpoints.up(992)]: {
       paddingTop: '180px',
-      width: '970px',
+      width: '1100px',
     },
     [theme.breakpoints.up(1200)]: {
       paddingTop: '180px',
@@ -29,6 +30,7 @@ export const audition = makeStyles((theme) => ({
     },
   },
   introBox: {
+    background: 'white',
     wordBreak: 'keep-all',
     [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
@@ -227,6 +229,7 @@ export const audition = makeStyles((theme) => ({
 
 export const auditionInfo = makeStyles((theme) => ({
   info: {
+    background: 'white',
     [theme.breakpoints.up('xs')]: {
       padding: 0,
     },
@@ -242,7 +245,7 @@ export const auditionInfo = makeStyles((theme) => ({
 export const auditionTab = makeStyles((theme) => ({
   MuiTab: {
     display: 'flex',
-
+    background: 'white',
     justifyContent: 'center',
     width: '100%',
     [theme.breakpoints.up('xs')]: {
@@ -262,7 +265,6 @@ export const process = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       marginBottom: '20px',
     },
-    [theme.breakpoints.up(993)]: {},
   },
   part: {
     marginBottom: '15px',
@@ -375,32 +377,63 @@ export const process = makeStyles((theme) => ({
     marginBottom: '4px',
   },
   aor: {
-    [theme.breakpoints.up(993)]: {
+    padding: '0px',
+    margin: '0px',
+
+    [theme.breakpoints.up(992)]: {
       display: 'flex',
+
       width: '100%',
     },
   },
   singer: {
-    width: '100%',
     height: 'auto',
+
     color: '#333',
     borderRadius: '2px',
     backgroundColor: '#F3F3F3',
-    padding: '30px 10px 30px 10px',
-    [theme.breakpoints.up(993)]: { width: '90%' },
+    padding: '44px',
+    [theme.breakpoints.up(768)]: {
+      width: '100%',
+    },
+
+    [theme.breakpoints.up(993)]: {
+      width: '500px',
+      height: '370px',
+    },
+    [theme.breakpoints.up(1200)]: {
+      width: '550px',
+      height: '420px',
+    },
   },
   actor: {
-    width: '100%',
     height: 'auto',
+    margin: '0px',
     color: '#333',
     borderRadius: '2px',
     backgroundColor: '#F3F3F3',
-    padding: '30px 10px 30px 10px',
-    [theme.breakpoints.up(993)]: { width: '90%' },
+    padding: '44px',
+    [theme.breakpoints.up(768)]: { width: '100%' },
+    [theme.breakpoints.up(993)]: {
+      width: '500px',
+      height: '370px',
+    },
+    [theme.breakpoints.up(1200)]: {
+      width: '550px',
+      height: '420px',
+    },
   },
-  singActorFlex: {
-    display: 'flex',
+  singerBox: {
+    width: '100%',
+    [theme.breakpoints.up(993)]: {},
   },
+  actorBox: {
+    [theme.breakpoints.up(993)]: {},
+  },
+
+  // singActorFlex: {
+  //   display: 'flex',
+  // },
   singerActorTitle: {
     [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
@@ -409,10 +442,14 @@ export const process = makeStyles((theme) => ({
       fontWeight: 'bold',
       marginBottom: '15px',
     },
+    [theme.breakpoints.up(993)]: {
+      fontSize: '20px',
+    },
   },
 
   notice: {
     paddingLeft: '30px',
+    paddingRight: '30px',
 
     position: 'relative',
     '& p': {

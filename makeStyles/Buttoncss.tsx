@@ -10,5 +10,15 @@ export const btn = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: 'black',
     },
+    [theme.breakpoints.up(1200)]: {
+      width: '30%',
+    },
+  },
+  container: {
+    [theme.breakpoints.up(1200)]: {
+      display: 'flex',
+      justifyContent: 'center',
+      width: '100%',
+    },
   },
 }));
