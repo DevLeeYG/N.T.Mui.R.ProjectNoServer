@@ -1,6 +1,7 @@
 import { Typography, Container, Box } from '@mui/material';
 import React from 'react';
 import AppLayout from '../component/AppLayout';
+import Qnt from '../component/audition/INFORMATION/components/QnT/Qnt';
 import { contactUs } from '../makeStyles/contact';
 const contact = () => {
   console.log(contactUs);
@@ -29,6 +30,7 @@ const contact = () => {
               </Typography>
             </Box>
           </Box>
+          <Qnt />
         </Box>
       </Container>
     </AppLayout>
