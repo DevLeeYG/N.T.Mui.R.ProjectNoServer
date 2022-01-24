@@ -3,11 +3,11 @@ import React from 'react';
 import AppLayout from '../../component/AppLayout';
 import Index from '../../component/audition/INFORMATION/Index';
 import Tab from '../../component/audition/tap/Tab';
-import { audition } from '../../makeStyles/audition';
+import { audition, auditionTab } from '../../makeStyles/audition';
 
 const index = () => {
   const classes = audition();
-
+  const tb = auditionTab();
   return (
     <AppLayout>
       <Container className={classes.container}>
@@ -25,9 +25,10 @@ const index = () => {
             </p>
           </Box>
         </Box>
-        {/* //////////////////////////////////////////// */}
-        <Tab />
-        <Index />
+        <div className={classes.tie}>
+          <Tab />
+          <Index />
+        </div>
       </Container>
     </AppLayout>
   );

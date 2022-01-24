@@ -2,6 +2,27 @@ import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
 
 export const audition = makeStyles((theme) => ({
+  '@keyframes myEffect': {
+    '0%': {
+      opacity: 0,
+      transform: 'translate3d(0,100%,0)',
+    },
+    '30%': {
+      opacity: 0,
+      transform: 'translate3d(0,100%,0)',
+    },
+    // '75%': {
+    //   opacity: 0,
+    //   transform: 'translate3d(0,100%,0)',
+    // },
+    '100%': {
+      opacity: 1,
+      transform: 'translateZ(0)',
+    },
+  },
+  tie: {
+    animation: '$myEffect 2s',
+  },
   container: {
     background: 'white',
     paddingLeft: '15px',
@@ -38,12 +59,14 @@ export const audition = makeStyles((theme) => ({
       marginBottom: '45px',
       marginTop: 0,
       '& h1': {
+        animation: `$myEffect 1s `,
         fontSize: '22px',
         marginTop: 0,
         marginBottom: '40px',
       },
       '& p': {
         margin: 0,
+        animation: `$myEffect 2s `,
         color: '#757575',
         fontFamily: 'nato sans KR',
         fontSize: '14px',
@@ -228,6 +251,25 @@ export const audition = makeStyles((theme) => ({
 }));
 
 export const auditionInfo = makeStyles((theme) => ({
+  '@keyframes myEffect': {
+    '0%': {
+      opacity: 0,
+      transform: 'translate3d(0,100%,0)',
+    },
+    '30%': {
+      opacity: 0,
+      transform: 'translate3d(0,100%,0)',
+    },
+    // '75%': {
+    //   opacity: 0,
+    //   transform: 'translate3d(0,100%,0)',
+    // },
+    '100%': {
+      opacity: 1,
+      transform: 'translateZ(0)',
+    },
+  },
+
   info: {
     background: 'white',
     [theme.breakpoints.up('xs')]: {
@@ -243,6 +285,24 @@ export const auditionInfo = makeStyles((theme) => ({
 }));
 
 export const auditionTab = makeStyles((theme) => ({
+  '@keyframes myEffect': {
+    '0%': {
+      opacity: 0,
+      transform: 'translate3d(0,100%,0)',
+    },
+    '30%': {
+      opacity: 0,
+      transform: 'translate3d(0,100%,0)',
+    },
+    // '75%': {
+    //   opacity: 0,
+    //   transform: 'translate3d(0,100%,0)',
+    // },
+    '100%': {
+      opacity: 1,
+      transform: 'translateZ(0)',
+    },
+  },
   MuiTab: {
     display: 'flex',
     background: 'white',
