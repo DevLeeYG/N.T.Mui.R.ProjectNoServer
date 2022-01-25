@@ -9,7 +9,7 @@ const index = () => {
   const faq = Faq();
   const list = dummy.map((el) => {
     return (
-      <Typography component="li">
+      <Typography key={el.id} component="li">
         <Box>
           <Box className={faq.list}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
