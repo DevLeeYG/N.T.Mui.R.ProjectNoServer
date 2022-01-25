@@ -576,10 +576,10 @@ export const Faq = makeStyles(() => ({
   },
 
   list: {
-    borderTop: '1px solid #e1e1e1',
-    borderBottom: '1px solid #e1e1e1',
-
     padding: '20px 10px',
+    '& h4 ': {
+      fontSize: '14px',
+    },
   },
   listItem: {
     padding: '10px 10px 0px 10px',
@@ -598,17 +598,19 @@ export const dummy = [
   {
     id: 1,
     title: '오디션 지원 결과는 언제 알수 있나요?',
+    dropCheck: false,
     content: (
       <span>
         오디션 담당자가 지원 서류 확인 후<span>, </span>합격자에 한해 개별 연락
         드립니다
-        <span>.</span>
+        <span></span>.
       </span>
     ),
   },
   {
     id: 2,
     title: '이메일 접수 수신 확인이 되지 않습니다.',
+    dropCheck: true,
     content: (
       <>
         <p>
@@ -627,6 +629,7 @@ export const dummy = [
   {
     id: 3,
     title: '이메일 접수 수신 확인이 되지 않습니다.',
+    dropCheck: false,
     content: (
       <p>
         <span>네</span>
@@ -643,6 +646,7 @@ export const dummy = [
   {
     id: 4,
     title: '만 14세 미만은 오디션 지원이 불가한가요?',
+    dropCheck: false,
     content: (
       <p>
         <span>
@@ -656,6 +660,7 @@ export const dummy = [
   {
     id: 5,
     title: '여러 분야에 지원 할 수 있나요?',
+    dropCheck: false,
     content: (
       <p>
         <span>
@@ -669,6 +674,7 @@ export const dummy = [
   {
     id: 6,
     title: '필수 자료 첨부 시 사진,동영상,파일 사양에 제한이 있나요?',
+    dropCheck: false,
     content: (
       <p>
         <span>네</span>
@@ -683,6 +689,7 @@ export const dummy = [
   {
     id: 7,
     title: '사진 첨부 시 프로필 사진이 아닌 핸드폰으로 촬영한 사진도 괜찮나요?',
+    dropCheck: false,
     content: (
       <>
         <p>
