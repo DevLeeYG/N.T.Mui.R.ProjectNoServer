@@ -22,7 +22,7 @@ export const contactUs = makeStyles((theme) => ({
     paddingTop: '140px',
 
     '& h1': {
-      animation: '$contact 0.7s',
+      animation: '$contact 0.8s',
       fontSize: '22px',
       marginBottom: '50px',
       fontFamily: 'serif',

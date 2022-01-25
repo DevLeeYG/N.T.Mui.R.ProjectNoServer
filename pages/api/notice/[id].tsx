@@ -123,7 +123,7 @@ const dummy = [
     date: dateFormat(today),
     hit: 4,
     title: '13',
-    post: 'ggggg',
+    post: '',
   },
 ].reverse();
 

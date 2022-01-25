@@ -89,6 +89,7 @@ export const SmallBox = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       fontSize: '13px',
       color: `#818181`,
+      width: '500px',
     },
   },
   bottomBox: {

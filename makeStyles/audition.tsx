@@ -269,8 +269,19 @@ export const auditionInfo = makeStyles((theme) => ({
       transform: 'translateZ(0)',
     },
   },
+  '@keyframes infoEffect': {
+    '0%': {
+      opacity: 0,
+    },
+
+    '100%': {
+      opacity: 1,
+    },
+  },
 
   info: {
+    height: '100%',
+    animation: '$infoEffect 1s',
     background: 'white',
     [theme.breakpoints.up('xs')]: {
       padding: 0,
@@ -556,3 +567,144 @@ export const process = makeStyles((theme) => ({
     },
   },
 }));
+
+export const Faq = makeStyles(() => ({
+  FAQ: {
+    fontSize: '18px',
+    marginBottom: '10px',
+    fontWeight: 'bolder',
+  },
+
+  list: {
+    borderTop: '1px solid #e1e1e1',
+    borderBottom: '1px solid #e1e1e1',
+
+    padding: '20px 10px',
+  },
+  listItem: {
+    padding: '10px 10px 0px 10px',
+  },
+  title: {
+    fontWeight: 'bold',
+  },
+  content: {
+    fontSize: '13px',
+    fontWeight: 300,
+    color: '#3977cc',
+  },
+}));
+
+export const dummy = [
+  {
+    id: 1,
+    title: '오디션 지원 결과는 언제 알수 있나요?',
+    content: (
+      <span>
+        오디션 담당자가 지원 서류 확인 후<span>, </span>합격자에 한해 개별 연락
+        드립니다
+        <span>.</span>
+      </span>
+    ),
+  },
+  {
+    id: 2,
+    title: '이메일 접수 수신 확인이 되지 않습니다.',
+    content: (
+      <>
+        <p>
+          오디션 메일 계정은 보안에 따라 수신 확인이 되지 않을 수 있습니다만
+          <span>,</span>
+        </p>
+        <p>
+          <span>
+            보내주시는 지원서들은 빠짐없이 확인하고 있으니 염려 않으셔도 됩니다
+          </span>
+          <span>.</span>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 3,
+    title: '이메일 접수 수신 확인이 되지 않습니다.',
+    content: (
+      <p>
+        <span>네</span>
+        <span>, </span>
+        <span>가능합니다</span>
+        <span>
+          국내 지원자들과 동일하게 지원 서류 작성하여 필수 자료와 함께
+          보내주세요
+        </span>
+        <span>.</span>
+      </p>
+    ),
+  },
+  {
+    id: 4,
+    title: '만 14세 미만은 오디션 지원이 불가한가요?',
+    content: (
+      <p>
+        <span>
+          지원 가능하나<span>, </span>만 <span>14</span>세 미만 청소년 지원자는
+          법정 대리인의 정보와 오디션 동의서 확인 해주셔야 합니다
+          <span>.</span>
+        </span>
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    title: '여러 분야에 지원 할 수 있나요?',
+    content: (
+      <p>
+        <span>
+          가능합니다<span>. </span>지원서에 표기해주시고<span>, </span>필수
+          자료를 충분히 보내주시기 바랍니다<span>.</span>
+        </span>
+        &nbsp;
+      </p>
+    ),
+  },
+  {
+    id: 6,
+    title: '필수 자료 첨부 시 사진,동영상,파일 사양에 제한이 있나요?',
+    content: (
+      <p>
+        <span>네</span>
+        <span>, </span>
+        <span>있습니다</span>
+        <span>. </span>
+        <span>모집 분야별 상세 내용을 다시 한 번 확인 해주세요</span>
+        <span>.</span>
+      </p>
+    ),
+  },
+  {
+    id: 7,
+    title: '사진 첨부 시 프로필 사진이 아닌 핸드폰으로 촬영한 사진도 괜찮나요?',
+    content: (
+      <>
+        <p>
+          <span>
+            전문가에 의해 촬영된 프로필 사진이 아니어도 얼굴 확인이 가능한
+            사진이면 됩니다
+          </span>
+          <span>.</span>
+        </p>
+        <p>
+          <span>단</span>
+          <span>, </span>
+          <span>보정이 된 사진</span>
+          <span> (</span>
+          <span>포토샵</span>
+          <span>,</span>
+          <span>휴대폰 어플 사용 등</span>
+          <span>) </span>
+          <span>은 심사에서 제외됩니다</span>
+          <span>.</span>
+        </p>
+      </>
+    ),
+  },
+];
