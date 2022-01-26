@@ -32,13 +32,13 @@ const Header = () => {
     alignItems: 'center',
   };
   const router = useRouter();
-  const href = useCallback(() => {
+  const href = () => {
     if (window.location.pathname.length > 1) {
       style.color = 'black';
     } else {
       return;
     }
-  }, []);
+  };
   href();
 
   const [mouseHover, setMouseHover] = useState<Boolean>(false);

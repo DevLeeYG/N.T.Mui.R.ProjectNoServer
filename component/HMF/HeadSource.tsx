@@ -82,7 +82,7 @@ export const sidebarlist: dummys = [
 export const HeaderStyle = makeStyles((theme) => ({
   root: {
     backgroundColor: 'transparent',
-
+    color: 'black',
     width: '100%',
     minHeight: '64px',
 
@@ -91,7 +91,7 @@ export const HeaderStyle = makeStyles((theme) => ({
   },
   root1: {
     backgroundColor: 'white',
-
+    color: 'black',
     width: '100%',
     minHeight: '64px',
 
