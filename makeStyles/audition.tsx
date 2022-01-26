@@ -12,10 +12,7 @@ export const audition = makeStyles((theme) => ({
       opacity: 0,
       transform: 'translate3d(0,100%,0)',
     },
-    // '75%': {
-    //   opacity: 0,
-    //   transform: 'translate3d(0,100%,0)',
-    // },
+
     '100%': {
       opacity: 1,
       transform: 'translateZ(0)',

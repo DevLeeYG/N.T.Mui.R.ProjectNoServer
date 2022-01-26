@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   CardMedia,
   AppBar,
@@ -16,6 +16,7 @@ import Sidebar from '../HeadDetail/Sidebar';
 import { HeaderStyle, Headerimg } from './HeadSource';
 import Headlink from '../HeadDetail/Headlink';
 import { useRouter } from 'next/router';
+import { isClassExpression } from 'typescript';
 const HeadSapn = styled.span`
   margin-left: 10px;
   margin-right: 10px;
@@ -31,13 +32,13 @@ const Header = () => {
     alignItems: 'center',
   };
   const router = useRouter();
-  const href = () => {
+  const href = useCallback(() => {
     if (window.location.pathname.length > 1) {
       style.color = 'black';
     } else {
       return;
     }
-  };
+  }, []);
   href();
 
   const [mouseHover, setMouseHover] = useState<Boolean>(false);
@@ -45,13 +46,12 @@ const Header = () => {
   const classes = HeaderStyle();
   const classesI = Headerimg();
 
-  // const menu = dummy.map((el) => {
-  //   return <HeadSapn key={el.id}>{el.text}</HeadSapn>;
-  // });
-
   return (
     <Box>
-      <AppBar sx={{ boxShadow: 0 }} className={classes.root}>
+      <AppBar
+        sx={{ boxShadow: 0 }}
+        className={router.asPath === '/' ? classes.root : classes.root1}
+      >
         <Toolbar>
           <CardMedia
             onClick={() => router.push('/')}
