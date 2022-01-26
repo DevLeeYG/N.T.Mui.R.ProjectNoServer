@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
+import { transform } from 'typescript';
 
 export const audition = makeStyles((theme) => ({
   '@keyframes myEffect': {
@@ -282,6 +283,7 @@ export const auditionInfo = makeStyles((theme) => ({
   info: {
     height: '100%',
     animation: '$infoEffect 1s',
+
     background: 'white',
     [theme.breakpoints.up('xs')]: {
       padding: 0,
@@ -568,17 +570,41 @@ export const process = makeStyles((theme) => ({
   },
 }));
 
-export const Faq = makeStyles(() => ({
+export const Faq = makeStyles((theme) => ({
+  '@keyframes myEffect': {
+    '0%': {
+      opacity: 0,
+      transform: 'translate3d(0,-50%,0)',
+    },
+
+    '100%': {
+      opacity: 1,
+      transform: 'translateZ(0)',
+    },
+  },
+
   FAQ: {
     fontSize: '18px',
     marginBottom: '10px',
     fontWeight: 'bolder',
+    [theme.breakpoints.up(768)]: {
+      fontSize: '20px',
+    },
+    [theme.breakpoints.up(993)]: {
+      fontSize: '23px',
+    },
   },
 
   list: {
     padding: '20px 10px',
     '& h4 ': {
       fontSize: '14px',
+      [theme.breakpoints.up(768)]: {
+        fontSize: '16px',
+      },
+      [theme.breakpoints.up(993)]: {
+        fontSize: '18px',
+      },
     },
   },
   listItem: {
@@ -588,11 +614,27 @@ export const Faq = makeStyles(() => ({
     fontWeight: 'bold',
   },
   content: {
+    animation: '$myEffect 0.8s',
     fontSize: '13px',
     fontWeight: 300,
     color: '#3977cc',
+    [theme.breakpoints.up(768)]: {
+      fontSize: '14px',
+    },
+    [theme.breakpoints.up(993)]: {
+      fontSize: '15px',
+    },
   },
 }));
+interface border {
+  borderTop: string;
+  borderBottom: string;
+}
+
+const style: border = {
+  borderTop: '1px solid #e1e1e1',
+  borderBottom: '1px solid #e1e1e1',
+};
 
 export const dummy = [
   {
@@ -606,11 +648,14 @@ export const dummy = [
         <span></span>.
       </span>
     ),
+    style: {
+      borderTop: '1px solid #e1e1e1',
+    },
   },
   {
     id: 2,
     title: '이메일 접수 수신 확인이 되지 않습니다.',
-    dropCheck: true,
+    dropCheck: false,
     content: (
       <>
         <p>
@@ -625,10 +670,13 @@ export const dummy = [
         </p>
       </>
     ),
+    style: {
+      borderTop: '1px solid #e1e1e1',
+    },
   },
   {
     id: 3,
-    title: '이메일 접수 수신 확인이 되지 않습니다.',
+    title: '해외 지원자도 접수 가능한가요?',
     dropCheck: false,
     content: (
       <p>
@@ -642,6 +690,9 @@ export const dummy = [
         <span>.</span>
       </p>
     ),
+    style: {
+      borderTop: '1px solid #e1e1e1',
+    },
   },
   {
     id: 4,
@@ -656,6 +707,9 @@ export const dummy = [
         </span>
       </p>
     ),
+    style: {
+      borderTop: '1px solid #e1e1e1',
+    },
   },
   {
     id: 5,
@@ -670,6 +724,9 @@ export const dummy = [
         &nbsp;
       </p>
     ),
+    style: {
+      borderTop: '1px solid #e1e1e1',
+    },
   },
   {
     id: 6,
@@ -685,6 +742,10 @@ export const dummy = [
         <span>.</span>
       </p>
     ),
+    style: {
+      borderTop: '1px solid #e1e1e1',
+      borderBottom: '1px solid #e1e1e1',
+    },
   },
   {
     id: 7,
@@ -713,5 +774,8 @@ export const dummy = [
         </p>
       </>
     ),
+    style: {
+      borderBottom: '1px solid #e1e1e1',
+    },
   },
 ];
