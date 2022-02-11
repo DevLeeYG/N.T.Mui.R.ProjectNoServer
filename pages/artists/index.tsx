@@ -1,8 +1,8 @@
 import { Box, CardContent, CardMedia } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
-import AppLayout from '../component/AppLayout';
-import { container } from '../makeStyles/artists';
+import AppLayout from '../../component/AppLayout';
+import { container } from '../../makeStyles/artists';
 const artists = () => {
   const classes = container();
   const [hover, setHover] = useState(false);
@@ -24,7 +24,11 @@ const artists = () => {
             onMouseLeave={() => setHover(false)}
             className={classes.containerBox}
           >
-            {hover && <Box className={classes.innerBox}>아이유(iu)</Box>}
+            {hover && (
+              <Box className={classes.innerBox}>
+                <Box className={classes.textbox}>아이유(iu)</Box>
+              </Box>
+            )}
 
             <CardMedia
               className={classes.artist}
@@ -38,7 +42,11 @@ const artists = () => {
             onMouseLeave={() => setSgHover(false)}
             className={classes.containerBox}
           >
-            {sgHover && <Box className={classes.innerBox}>신세경</Box>}
+            {sgHover && (
+              <Box className={classes.innerBox}>
+                <Box className={classes.textbox}>신세경</Box>
+              </Box>
+            )}
             <CardMedia
               className={classes.artist}
               component="img"

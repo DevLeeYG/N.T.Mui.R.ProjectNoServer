@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import transitions from '@material-ui/core/styles/transitions';
+
 type dummys = { id: number; text: string; path: string }[];
 const BtoU = keyframes`
   from {
@@ -79,17 +78,6 @@ export const sidebarlist: dummys = [
     path: 'contact',
   },
 ];
-
-// export const style = {
-//   display: 'flex',
-//   width: '100%',
-//   zIndex: 9999,
-//   backgroundColor: 'transparent',
-//   boxShadow: 0,
-//   justifyContent: 'space-between',
-//   paddingLeft: '12px',
-//   paddingRight: '10px',
-// };
 
 export const HeaderStyle = makeStyles((theme) => ({
   root: {

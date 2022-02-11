@@ -2,6 +2,11 @@ import { makeStyles } from '@material-ui/core';
 import { keyframes } from '@mui/system';
 
 export const container = makeStyles((theme) => ({
+  '@keyframes EdamFont': {
+    from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
+    to: { opacity: 1, transform: 'translateZ(0)' },
+  },
+
   root: {
     fontFamily: 'serif',
     marginLeft: 'auto',
@@ -75,14 +80,14 @@ export const container = makeStyles((theme) => ({
   artists: {
     display: 'flex',
 
-    marginRight: 'auto',
-    marginLeft: 'auto',
     [theme.breakpoints.up('xs')]: {
       width: '100%',
       marginTop: '35px',
       paddingBottom: '100px',
     },
     [theme.breakpoints.up('md')]: {
+      marginRight: 'auto',
+      marginLeft: 'auto',
       width: '1000px',
       marginTop: '-80px',
       paddingBottom: '100px',
@@ -95,36 +100,44 @@ export const container = makeStyles((theme) => ({
   },
 
   containerBox: {
-    color: 'white',
-    position: 'relative',
-    paddingLeft: '10px',
-    paddingRight: '10px',
-
-    '&:hover': {
-      filter: 'brightness(0.30)',
-
-      zIndex: 0,
+    [theme.breakpoints.up('xs')]: {
+      color: 'white',
+      width: '100%',
+      position: 'relative',
+      marginLeft: '10px',
+      marginRight: '10px',
+    },
+    [theme.breakpoints.up(768)]: {
+      width: '250px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '350px',
     },
   },
 
   innerBox: {
     position: 'absolute',
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'rgba(0,0, 0, 0.5)',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%,-50%)',
-    color: 'white',
-    zIndex: 2,
-    textShadow: '-2px -1px 8px rgba(255, 255, 255, 1)',
+  },
+
+  textbox: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
   },
 
   artist: {
     display: 'flex',
+    animation: `$EdamFont 0.8s`,
     height: '100%',
     marginBottom: '10px',
-
-    [theme.breakpoints.up('lg')]: {
-      width: '350px',
-    },
 
     [theme.breakpoints.up('lg')]: {
       width: '350px',
