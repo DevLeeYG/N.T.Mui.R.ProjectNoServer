@@ -1,13 +1,14 @@
 import { Box, Container } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import AppLayout from '../../component/AppLayout';
+import FaqIndex from '../../component/audition/FAQ/FaqIndex';
 import Index from '../../component/audition/INFORMATION/Index';
 import Tab from '../../component/audition/tap/Tab';
 import { audition, auditionTab } from '../../makeStyles/audition';
 
 const index = () => {
   const classes = audition();
-  const tb = auditionTab();
+
   return (
     <AppLayout>
       <Container className={classes.container}>
@@ -27,7 +28,6 @@ const index = () => {
         </Box>
         <div className={classes.tie}>
           <Tab />
-          <Index />
         </div>
       </Container>
     </AppLayout>

@@ -82,7 +82,16 @@ export const sidebarlist: dummys = [
 export const HeaderStyle = makeStyles((theme) => ({
   root: {
     backgroundColor: 'transparent',
+    color: 'black',
+    width: '100%',
+    minHeight: '64px',
 
+    [theme.breakpoints.up('sm')]: { padding: '30px 0px 30px 30px' },
+    [theme.breakpoints.up('md')]: { margin: 0 },
+  },
+  root1: {
+    backgroundColor: 'white',
+    color: 'black',
     width: '100%',
     minHeight: '64px',
 
@@ -320,6 +329,7 @@ export const Edam = makeStyles((theme) => ({
       animation: '$EdamFont 2s',
     },
   },
+
   root1: {
     marginBottom: 0,
     marginTop: 0,
